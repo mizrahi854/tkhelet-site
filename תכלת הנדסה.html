@@ -1,1 +1,283 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>תכלת הנדסה</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
+    .רקע-עם-שכבה {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url('תמונות/pexels-quang-nguyen-vinh-222549-2138126.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+    }
+
+    .שכבת-שחור {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    .סרגל-כלים {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #eee;
+      padding: 1rem;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .סרגל-כלים img {
+      height: 50px;
+      margin-right: 1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      margin-left: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #00a2c8;
+    }
+
+    .מרווח-סרגל {
+      height: 100px;
+    }
+
+    .תמונה {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    .תמונה img {
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      opacity: 0.9;
+      display: block;
+    }
+
+    .תיבת-טקסט {
+      flex: 1;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 400px;
+    }
+
+    .טקסט-משיכה {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      margin: 2rem auto 1rem;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 1rem;
+      border-radius: 8px;
+      max-width: 600px;
+    }
+
+    .קטלוג {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      overflow: hidden;
+      max-width: 100%;
+      padding: 2rem;
+    }
+
+    .קטלוג img {
+      width: 280px;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      position: absolute;
+    }
+
+    .קטלוג-wrapper {
+      position: relative;
+      width: 280px;
+      height: 180px;
+    }
+
+    .קטלוג img.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .צור-קשר {
+      background-color: #f5f5f5;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .צור-קשר form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .צור-קשר input, .צור-קשר button {
+      padding: 0.7rem;
+      font-size: 16px;
+    }
+
+    .צור-קשר input {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .צור-קשר button {
+      background-color: #0077aa;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .צור-קשר button:hover {
+      background-color: #005f88;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="רקע-עם-שכבה"></div>
+  <div class="שכבת-שחור"></div>
+
+  <div class="סרגל-כלים">
+    <img src="תמונות/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה">  
+    <nav>
+      <a href="תכלת הנדסה.html">בית</a>
+      <a href="אודות.html">אודות</a>
+      <a href="שירותים.html">שירותים</a>
+      <a href="המלצות.html">המלצות</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
+  </div>
+
+  <div class="מרווח-סרגל"></div>
+
+  <div class="תמונה">
+    <div>
+      <img src="תמונות/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="">
+    </div>
+    <div class="תיבת-טקסט">
+      <p>
+        בתכלת הנדסה אנו מציעים בדק בית מקצועי לדירות חדשות ויד שנייה, כולל ליווי מול קבלן ודוחות מפורטים. <br><br>
+        ✔️ גילוי ליקויים ורטיבויות<br>
+        ✔️ ציוד מתקדם וניסיון עשיר<br>
+        ✔️ יחס אישי ואחריות מלאה<br><br>
+        📞 050-844-8818
+      </p>
+    </div>
+  </div>
+
+  <div class="טקסט-משיכה">
+    רוצים לדעת איך נראית בדיקה מקצועית באמת? הצצה לעבודות שביצענו בשטח:
+  </div>
+
+  <div class="קטלוג">
+    <div class="קטלוג-wrapper">
+      <img src="תמונות/WhatsApp Image 2025-06-16 at 21.04.50.jpeg" class="active" alt="בדק בית 1">
+      <img src="תמונות/pexels-thirdman-8482865.jpg" alt="בדק בית 2">
+      <img src="תמונות/pexels-thirdman-8482551.jpg" alt="בדק בית 3">
+      <img src="תמונות/pexels-nicolae-casir-56591-205078.jpg" alt="">
+      <img src="תמונות/pexels-shkrabaanthony-4981810.jpg" alt="">
+    </div>
+    <div class="קטלוג-wrapper">
+      <img src="תמונות/pexels-shkrabaanthony-4981802.jpg" class="active" alt="">
+      <img src="תמונות/pexels-shkrabaanthony-4981795.jpg" alt="">
+      <img src="תמונות/pexels-shkrabaanthony-4981774.jpg" alt="">
+    </div>
+    <div class="קטלוג-wrapper">
+      <img src="תמונות/pexels-nicolae-casir-56591-205078.jpg" class="active" alt="">
+      <img src="תמונות/pexels-shkrabaanthony-4981774.jpg" alt="">
+      <img src="תמונות/pexels-shkrabaanthony-4981795.jpg" alt="">
+    </div>
+  </div>
+
+  <div class="צור-קשר" id="contact">
+    <h2>צור קשר</h2>
+    <h6>*ונחזור אלייך בהקדם*</h6>
+    <form onsubmit="alert('הפרטים נשלחו בהצלחה!'); return false;">
+      <input type="text" placeholder="שם מלא" required>
+      <input type="tel" placeholder="מספר טלפון" required>
+      <input type="email" placeholder="כתובת אימייל" required>
+      <button type="submit">שלח</button>
+    </form>
+  </div>
+
+  <footer>
+    <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
+    <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
+  </footer>
+
+  <script>
+    function startCarousel(wrapperSelector) {
+      const wrappers = document.querySelectorAll(wrapperSelector);
+      wrappers.forEach(wrapper => {
+        const images = wrapper.querySelectorAll("img");
+        let current = 0;
+        setInterval(() => {
+          images[current].classList.remove("active");
+          current = (current + 1) % images.length;
+          images[current].classList.add("active");
+        }, 2500);
+      });
+    }
+    startCarousel(".קטלוג-wrapper");
+  </script>
+
+</body>
+</html>
