@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אודות</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: gainsboro;
+    }
+
+    .אודות {
+      max-width: 100%;
+      margin: 2rem auto;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      background-image: url('https://www.paztech.co.il/assets/img/aluminium2.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .אודות::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .אודות h3, .אודות p {
+      position: relative;
+      z-index: 2;
+      margin: 0.5rem 0;
+      color: white;
+      border-radius: 5px;
+      max-width: 600px;
+    }
+
+    .אודות h3 {
+      font-size: 2rem;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .אודות h3:first-child::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 4px;
+      background-color: rgb(176, 34, 34);
+      border-radius: 2px;
+      z-index: 3;
+    }
+
+    h2 {
+      text-align: center;
+      color: #0077aa;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .סרגל-כלים {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #eee;
+      padding: 1rem;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .סרגל-כלים img {
+      height: 50px;
+      margin-right: 1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      margin-left: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #00a2c8;
+    }
+
+    .מרווח-סרגל {
+      height: 100px;
+    }
+
+    .טקסט-אודות {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .צור-קשר {
+      background-color: #f5f5f5;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .צור-קשר form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .צור-קשר input, .צור-קשר button {
+      padding: 0.7rem;
+      font-size: 16px;
+    }
+
+    .צור-קשר input {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .צור-קשר button {
+      background-color: #0077aa;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .צור-קשר button:hover {
+      background-color: #005f88;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      color: rgba(45, 45, 45, 0.6);
+    }
+
+    footer p:first-child {
+      margin-bottom: 3px;
+    }
+
+    footer strong {
+      font-weight: normal;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="סרגל-כלים">
+    <img src="תמונות/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="">
+    <nav>
+      <a href="תכלת הנדסה.html">בית</a>
+      <a href="אודות.html">אודות</a>
+      <a href="שירותים.html">שירותים</a>
+      <a href="המלצות.html">המלצות</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
+  </div>
+
+  <div class="מרווח-סרגל"></div>
+
+  <div class="אודות">
+    <h3>אודות</h3>
+    <p>
+      ברוכים הבאים ל"תכלת הנדסה" – משרד בדק בית מקצועי בניהול מוטי אדרי,<br>
+      הנדסאי בניין ומנהל עבודה מוסמך.<br>
+      אנו מתמחים בליווי רוכשי דירות חדשות ויד שנייה,<br>
+      איתור ליקויים,<br>
+      ומתן דוחות מקצועיים שיעניקו לכם ביטחון ושקט נפשי<br>
+      בקנייה החשובה בחייכם.
+    </p>
+  </div>
+
+  <div class="טקסט-אודות">
+    <h2 style="text-align: center;color: black;">מי אנחנו?</h2>
+    <p>
+      אז שלום, שמי מוטי אדרי – הנדסאי בניין, מנהל עבודה מוסמך לעבודות בנייה ובנייה הנדסית,<br>
+      ובעל תעודה רשמית מטעם משרד העבודה לביצוע בדק בית ואיתור ליקויי בנייה.<br><br>
+
+      במהלך השנים עסקתי בפיקוח בנייה בפרויקטים מגוונים, מטעם חברות שונות –<br>
+      ואני מביא איתי ניסיון שטח, עין מקצועית חדה וגישה שירותית ואנושית.<br><br>
+
+      הקמתי את תכלת הנדסה כדי לתת מענה מקצועי, מדויק ואמין לרוכשי דירות חדשות ויד שנייה –<br>
+      ולכל מי שנתקל בתקלה בדירה ולא יודע איך לפתור את הבעיה.<br><br>
+
+      המטרה שלנו ברורה: לאתר כל ליקוי אפשרי בדירה ולתת ללקוחות שלנו שקט נפשי לפני קבלת החלטה כל כך חשובה.<br><br>
+
+      אני מאמין ששירות טוב מתחיל בהקשבה ללקוח, וממשיך בביצוע בדיקה יסודית עם דיווח אמין וברור –<br>
+      כדי שתדעו בדיוק מה מצב הנכס שאתם עומדים לרכוש או למסור.<br><br>
+
+      הערכים שמובילים אותי:<br>
+      ✔️ מקצועיות – עבודה מדויקת, לפי תקנים ובאמצעות ציוד מתקדם.<br>
+      ✔️ שקיפות – כל ממצא מדווח ומוסבר בצורה ברורה וללא הפתעות.<br>
+      ✔️ יחס אישי – זמינות, סבלנות וליווי מלא לאורך כל הדרך.<br>
+      ✔️ דיוק ואמינות – כי בבדק בית אין מקום לפשרות.<br><br>
+
+      אשמח לעזור גם לכם – בין אם אתם לקראת קבלת דירה חדשה מקבלן, או שוקלים לרכוש נכס מיד שנייה –<br>
+      אל תוותרו על בדיקה מקצועית.<br>
+      זה ההבדל בין עסקה בטוחה לבין תיקונים יקרים בעתיד.
+    </p>
+  </div>
+
+  <div class="צור-קשר" id="contact">
+    <h2>צור קשר</h2>
+    <form onsubmit="alert('הפרטים נשלחו בהצלחה!'); return false;">
+      <input type="text" placeholder="שם מלא" required>
+      <input type="tel" placeholder="מספר טלפון" required>
+      <input type="email" placeholder="כתובת אימייל" required>
+      <button type="submit">שלח</button>
+    </form>
+  </div>
+
+  <footer>
+    <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
+    <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
+  </footer>
+
+</body>
+</html>

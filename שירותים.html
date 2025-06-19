@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>שירותים - תכלת הנדסה</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: gainsboro;
+    }
+
+    .סרגל-כלים {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #eee;
+      padding: 1rem;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .סרגל-כלים img {
+      height: 50px;
+      margin-right: 1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      margin-left: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #00a2c8;
+    }
+
+    .מרווח-סרגל {
+      height: 100px;
+    }
+
+    .שירותים-כותרת {
+      max-width: 100%;
+      margin: 2rem auto;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      background-image: url('https://www.paztech.co.il/assets/img/aluminium2.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .שירותים-כותרת::before {
+      content: "";
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+      border-radius: 10px;
+    }
+
+    .שירותים-כותרת h3 {
+      position: relative;
+      z-index: 2;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0 0 0.5rem 0;
+      color: white;
+    }
+
+    .שירותים-כותרת h3::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: rgb(176, 34, 34);
+      margin: 0.5rem auto 0 auto;
+      border-radius: 2px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .שירותים-כותרת p {
+      margin-top: 0;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      line-height: 1.6;
+      font-size: 18px;
+      padding: 0 1rem;
+      color: white;
+    }
+
+    .טקסט-שירותים {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 2rem 2rem 2rem;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #000;
+    }
+
+    .תמונות-שירותים {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 2rem auto;
+      max-width: 1000px;
+    }
+
+    .תמונת-שירות {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .תמונת-שירות img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .כיתוב-על-תמונה {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(200,200,200,0.7);
+      text-align: center;
+      font-weight: bold;
+      padding: 0.5rem 0;
+      font-size: 16px;
+    }
+
+    .כותרת-אלבום {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .כותרת-אלבום h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #000000;
+      position: relative;
+    }
+
+    .כותרת-אלבום h3::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: rgb(176, 34, 34);
+      margin: 0.5rem auto 0 auto;
+      border-radius: 2px;
+    }
+
+    .אלבום-תמונות {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 2rem auto 4rem auto;
+      padding: 0 1rem;
+    }
+
+    .אלבום-תמונות img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .אלבום-תמונות img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    .צור-קשר {
+      background-color: #f5f5f5;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .צור-קשר form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .צור-קשר input, .צור-קשר button {
+      padding: 0.7rem;
+      font-size: 16px;
+    }
+
+    .צור-קשר input {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .צור-קשר button {
+      background-color: #0077aa;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .צור-קשר button:hover {
+      background-color: #005f88;
+    }
+
+   footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 14px;
+      color: rgba(45, 45, 45, 0.6);
+    }
+
+    footer p:first-child {
+      margin-bottom: 2px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="סרגל-כלים">
+    <img src="תמונות/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה">
+    <nav>
+      <a href="תכלת הנדסה.html">בית</a>
+      <a href="אודות.html">אודות</a>
+      <a href="שירותים.html">שירותים</a>
+      <a href="המלצות.html">המלצות</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
+  </div>
+
+  <div class="מרווח-סרגל"></div>
+
+  <section class="שירותים-כותרת">
+    <h3>שירותים</h3>
+    <p>
+      בדיקות מקיפות ומקצועיות לדירות חדשות ויד שנייה<br>
+      אנו מבצעים בדיקות חשמל ולחץ מים כולל בדיקת עומסים, שקעים ולחץ בצנרת,<br>
+      לצד בדיקות יסודיות בשטחים הציבוריים של הבניין – לובי, מעלית, חניה ועוד.<br>
+      בנוסף לכך, אנו משווים את הממצאים לתכניות הבנייה: גובה תקרה, מידות מדויקות, מיקומי נקודות החשמל ועוד.<br>
+      בסיום כל בדיקה תינתן ללקוח דוח מסכם מקצועי, מפורט וברור,<br>
+      כולל תמונות, ליקויים והמלצות להמשך טיפול.
+    </p>
+  </section>
+
+  <section class="טקסט-שירותים">
+    <p>
+      אנו ב"תכלת הנדסה" מחויבים לדיוק, אמינות ושירות אישי לאורך כל תהליך הבדיקה.<br>
+      פנו אלינו לקבלת ייעוץ מקצועי בצור קשר והתחילו בתהליך בדק הבית שלכם עם שקט נפשי אמיתי.
+    </p>
+  </section>
+
+  <div class="תמונות-שירותים">
+    <div class="תמונת-שירות">
+      <a href="איתור ליקויים.html"><img src="תמונות/צילום מסך 2025-06-18 ב-13.37.59.png" alt=""></a>
+      <div class="כיתוב-על-תמונה">איתור ליקויים</div>
+    </div>
+    <div class="תמונת-שירות">
+     <a href="בדיקת תשתיות.html"><img src="תמונות/בדיקות-צילום-פנים-צנרת-1-300x300.jpg" alt=""></a> 
+      <div class="כיתוב-על-תמונה">בדיקת תשתיות</div>
+    </div>
+    <div class="תמונת-שירות">
+     <a href="בדיקות תרמיות.html"> <img src="תמונות/מצלמה-לבדיקת-רטיבות-300x300.jpg" alt=""></a>
+      <div class="כיתוב-על-תמונה">בדיקות תרמיות</div>
+    </div>
+  </div>
+
+  <div class="כותרת-אלבום"><h3>בדיקות לדוגמה</h3></div>
+
+  <div class="אלבום-תמונות">
+    <img src="תמונות/הורדה.png" alt="תיאור תמונה 1">
+    <img src="תמונות/הורדה.jpeg" alt="תיאור תמונה 2">
+    <img src="תמונות/הורדה (2).jpeg" alt="תיאור תמונה 3">
+    <img src="תמונות/הורדה (1).png" alt="תיאור תמונה 4">
+  </div>
+
+  <div class="צור-קשר" id="contact">
+    <h2>צור קשר</h2>
+    <form onsubmit="alert('הפרטים נשלחו בהצלחה!'); return false;">
+      <input type="text" placeholder="שם מלא" required>
+      <input type="tel" placeholder="מספר טלפון" required>
+      <input type="email" placeholder="כתובת אימייל" required>
+      <button type="submit">שלח</button>
+    </form>
+  </div>
+
+  <footer>
+    <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
+    <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
+  </footer>
+
+
+</body>
+</html>
