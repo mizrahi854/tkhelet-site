@@ -2,34 +2,14 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>תכלת הנדסה</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>שירותים - תכלת הנדסה</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-    }
-
-    .רקע-עם-שכבה {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: url('תמונות/pexels-quang-nguyen-vinh-222549-2138126.jpg');
-      background-size: cover;
-      background-position: center;
-      z-index: -2;
-    }
-
-    .שכבת-שחור {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.4);
-      z-index: -1;
+      margin: 0;
+      padding: 0;
+      background-color: gainsboro;
     }
 
     .סרגל-כלים {
@@ -73,77 +53,157 @@
       height: 100px;
     }
 
-    .תמונה {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 2rem;
+    .שירותים-כותרת {
+      max-width: 100%;
+      margin: 2rem auto;
       padding: 2rem;
-      flex-wrap: wrap;
-      text-align: left;
+      text-align: center;
+      position: relative;
+      background-image: url('https://www.paztech.co.il/assets/img/aluminium2.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
     }
 
-    .תמונה img {
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      opacity: 0.9;
+    .שירותים-כותרת::before {
+      content: "";
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+      border-radius: 10px;
+    }
+
+    .שירותים-כותרת h3 {
+      position: relative;
+      z-index: 2;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0 0 0.5rem 0;
+      color: white;
+    }
+
+    .שירותים-כותרת h3::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: rgb(176, 34, 34);
+      margin: 0.5rem auto 0 auto;
+      border-radius: 2px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .שירותים-כותרת p {
+      margin-top: 0;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      line-height: 1.6;
+      font-size: 18px;
+      padding: 0 1rem;
+      color: white;
+    }
+
+    .טקסט-שירותים {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 2rem 2rem 2rem;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #000;
+    }
+
+    .תמונות-שירותים {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 2rem auto;
+      max-width: 1000px;
+    }
+
+    .תמונת-שירות {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .תמונת-שירות img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
 
-    .תיבת-טקסט {
-      flex: 1;
-      font-weight: bold;
-      background-color: rgba(255, 255, 255, 0.6);
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      font-size: 17px;
-      line-height: 1.7;
-      max-width: 400px;
-    }
-
-    .טקסט-משיכה {
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-      color: white;
-      margin: 2rem auto 1rem;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 1rem;
-      border-radius: 8px;
-      max-width: 600px;
-    }
-
-    .קטלוג {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      overflow: hidden;
-      max-width: 100%;
-      padding: 2rem;
-    }
-
-    .קטלוג img {
-      width: 280px;
-      height: 180px;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
+    .כיתוב-על-תמונה {
       position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(200,200,200,0.7);
+      text-align: center;
+      font-weight: bold;
+      padding: 0.5rem 0;
+      font-size: 16px;
     }
 
-    .קטלוג-wrapper {
-      position: relative;
-      width: 280px;
-      height: 180px;
+    .כותרת-אלבום {
+      text-align: center;
+      margin-top: 3rem;
     }
 
-    .קטלוג img.active {
-      opacity: 1;
+    .כותרת-אלבום h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #000000;
       position: relative;
+    }
+
+    .כותרת-אלבום h3::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: rgb(176, 34, 34);
+      margin: 0.5rem auto 0 auto;
+      border-radius: 2px;
+    }
+
+    .אלבום-תמונות {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 2rem auto 4rem auto;
+      padding: 0 1rem;
+    }
+
+    .אלבום-תמונות img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .אלבום-תמונות img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     }
 
     .צור-קשר {
@@ -182,21 +242,23 @@
       background-color: #005f88;
     }
 
-    footer {
+   footer {
       text-align: center;
       padding: 1rem;
       font-size: 14px;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(45, 45, 45, 0.6);
     }
+
+    footer p:first-child {
+      margin-bottom: 2px;
+    }
+
   </style>
 </head>
 <body>
 
-  <div class="רקע-עם-שכבה"></div>
-  <div class="שכבת-שחור"></div>
-
   <div class="סרגל-כלים">
-    <img src="תמונות/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה">  
+    <img src="תמונות/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה">
     <nav>
       <a href="index.html">בית</a>
       <a href="אודות.html">אודות</a>
@@ -208,66 +270,60 @@
 
   <div class="מרווח-סרגל"></div>
 
-  <div class="תמונה">
-    <div>
-      <img src="תמונות/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="">
+  <section class="שירותים-כותרת">
+    <h3>שירותים</h3>
+    <p>
+      בדיקות מקיפות ומקצועיות לדירות חדשות ויד שנייה<br>
+      אנו מבצעים בדיקות חשמל ולחץ מים כולל בדיקת עומסים, שקעים ולחץ בצנרת,<br>
+      לצד בדיקות יסודיות בשטחים הציבוריים של הבניין – לובי, מעלית, חניה ועוד.<br>
+      בנוסף לכך, אנו משווים את הממצאים לתכניות הבנייה: גובה תקרה, מידות מדויקות, מיקומי נקודות החשמל ועוד.<br>
+      בסיום כל בדיקה תינתן ללקוח דוח מסכם מקצועי, מפורט וברור,<br>
+      כולל תמונות, ליקויים והמלצות להמשך טיפול.
+    </p>
+  </section>
+
+  <section class="טקסט-שירותים">
+    <p>
+      אנו ב"תכלת הנדסה" מחויבים לדיוק, אמינות ושירות אישי לאורך כל תהליך הבדיקה.<br>
+      פנו אלינו לקבלת ייעוץ מקצועי בצור קשר והתחילו בתהליך בדק הבית שלכם עם שקט נפשי אמיתי.
+    </p>
+  </section>
+
+  <div class="תמונות-שירותים">
+    <div class="תמונת-שירות">
+      <a href="איתור ליקויים.html"><img src="תמונות/צילום מסך 2025-06-18 ב-13.37.59.png" alt=""></a>
+      <div class="כיתוב-על-תמונה">איתור ליקויים</div>
     </div>
-    <div class="תיבת-טקסט">
-      <p>
-        בתכלת הנדסה אנו מציעים בדק בית מקצועי לדירות חדשות ויד שנייה, כולל ליווי מול קבלן ודוחות מפורטים. <br><br>
-        ✔️ גילוי ליקויים ורטיבויות<br>
-        ✔️ ציוד מתקדם וניסיון עשיר<br>
-        ✔️ יחס אישי ואחריות מלאה<br><br>
-        📞 050-844-8818
-      </p>
+    <div class="תמונת-שירות">
+     <a href="בדיקת תשתיות.html"><img src="תמונות/בדיקות-צילום-פנים-צנרת-1-300x300.jpg" alt=""></a> 
+      <div class="כיתוב-על-תמונה">בדיקת תשתיות</div>
+    </div>
+    <div class="תמונת-שירות">
+     <a href="בדיקות תרמיות.html"> <img src="תמונות/מצלמה-לבדיקת-רטיבות-300x300.jpg" alt=""></a>
+      <div class="כיתוב-על-תמונה">בדיקות תרמיות</div>
     </div>
   </div>
 
-  <div class="טקסט-משיכה">
-    רוצים לדעת איך נראית בדיקה מקצועית באמת? הצצה לעבודות שביצענו בשטח:
-  </div>
+  <div class="כותרת-אלבום"><h3>בדיקה לדוגמה</h3></div>
 
-  <div class="קטלוג">
-    <div class="קטלוג-wrapper">
-      <img src="תמונות/WhatsApp Image 2025-06-16 at 21.04.50.jpeg" class="active" alt="בדק בית 1">
-      <img src="תמונות/pexels-thirdman-8482865.jpg" alt="בדק בית 2">
-      <img src="תמונות/pexels-thirdman-8482551.jpg" alt="בדק בית 3">
-      <img src="תמונות/pexels-nicolae-casir-56591-205078.jpg" alt="">
-      <img src="תמונות/pexels-shkrabaanthony-4981810.jpg" alt="">
-    </div>
-    <div class="קטלוג-wrapper">
-      <img src="תמונות/pexels-shkrabaanthony-4981802.jpg" class="active" alt="">
-      <img src="תמונות/pexels-shkrabaanthony-4981795.jpg" alt="">
-      <img src="תמונות/pexels-shkrabaanthony-4981774.jpg" alt="">
-    </div>
-    <div class="קטלוג-wrapper">
-      <img src="תמונות/pexels-nicolae-casir-56591-205078.jpg" class="active" alt="">
-      <img src="תמונות/pexels-shkrabaanthony-4981774.jpg" alt="">
-      <img src="תמונות/pexels-shkrabaanthony-4981795.jpg" alt="">
-    </div>
-  </div>
+  <div class="אלבום-תמונות">
+     <img src="תמונות/בדק בית 3.jpeg" alt="תיאור תמונה 3">
+    <img src="תמונות/בדק בית 1.jpeg" alt="תיאור תמונה 1">
+    <img src="תמונות/בדק בית 2.jpeg" alt="תיאור תמונה 2">
+    <img src="תמונות/בדק בית 4.jpeg" alt="תיאור תמונה 4">
+    <img src="תמונות/בדק בית 5.jpeg" alt="" >
+    <img src="תמונות/בדק בית6.jpeg" alt="">
+    <img src="תמונות/בדק בית 7.jpeg" alt="">
+    <img src="תמונות/בדק בית 8.jpeg" alt="">
 
+  </div>
 
   <footer>
     <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
     <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
   </footer>
 
-  <script>
-    function startCarousel(wrapperSelector) {
-      const wrappers = document.querySelectorAll(wrapperSelector);
-      wrappers.forEach(wrapper => {
-        const images = wrapper.querySelectorAll("img");
-        let current = 0;
-        setInterval(() => {
-          images[current].classList.remove("active");
-          current = (current + 1) % images.length;
-          images[current].classList.add("active");
-        }, 2500);
-      });
-    }
-    startCarousel(".קטלוג-wrapper");
-  </script>
 
 </body>
 </html>
+
