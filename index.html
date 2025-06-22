@@ -10,36 +10,29 @@
       font-family: Arial, sans-serif;
     }
 
-    /* פס עליון עם טקסט באמצע ואימייל/טלפון בצד שמאל */
     .שורה-עליונה {
       background-color: #eeeeee;
-      height: 30px;
+      height: auto;
       font-size: 12px;
       color: #444;
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 0 20px;
-      position: relative;
+      justify-content: space-between;
+      padding: 8px 16px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .שורה-אמצע {
-       position: relative;
-  z-index: 1;
-  text-align: center;
-  width: 100%;
-  margin-left: 180px;
+      flex: 1;
+      text-align: center;
     }
 
-    .שורה-שמאל {
-      position: absolute;
-      left: 20px;
-      direction: ltr;
+    .שורה-ימין {
       white-space: nowrap;
-      font-size: 12px;
+      direction: ltr;
     }
 
-    /* סרגל ניווט */
     .סרגל-כלים {
       display: flex;
       justify-content: space-between;
@@ -48,8 +41,9 @@
       background-color: #ffffff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: sticky;
-      top: 30px;
+      top: 0;
       z-index: 1000;
+      flex-wrap: wrap;
     }
 
     .סרגל-כלים img {
@@ -60,7 +54,7 @@
       display: flex;
       gap: 1.5rem;
       justify-content: center;
-      flex: 1;
+      flex-wrap: wrap;
     }
 
     .תפריט-ניווט a {
@@ -76,7 +70,6 @@
       text-decoration: underline;
     }
 
-    /* בלוק פתיחה */
     .hero {
       background-image: url('תמונות/pexels-quang-nguyen-vinh-222549-2138126.jpg');
       background-size: cover;
@@ -136,7 +129,6 @@
       border-radius: 2px;
     }
 
-    /* בלוק אודות מעוצב */
     .אודות-בלוק {
       background-color: #f9f9f9;
       padding: 60px 20px;
@@ -145,13 +137,13 @@
     }
 
     .תוכן-אודות {
-      max-width: 800px; /* ← גובה הריבוע */
-      background-color: white; /* ← צבע רקע לבן */
-      padding: 40px; /* ← ריווח פנימי */
-      border-radius: 12px; /* ← פינות מעוגלות */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ← הצללה (ריבוע) */
-      text-align: center; /* ← מרכז טקסט */
-    } /* ← 💬 כל הקלאס הזה יוצר את הריבוע סביב הטקסט למטה */
+      max-width: 800px;
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
 
     .תוכן-אודות h2 {
       font-size: 28px;
@@ -165,23 +157,22 @@
       color: #333;
     }
 
-    /* גלריית תמונות */
     .אלבום-תמונות {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 16px;
-      padding: 40px 20px;
-      background-color: #fff;
+      gap: 15px;
+      padding: 30px 20px;
+      background-color: #f0f0f0;
     }
 
     .אלבום-תמונות img {
-      width: 280px;
-      height: 180px;
+      width: 250px;
+      height: 160px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease-in-out;
     }
 
     .אלבום-תמונות img:hover {
@@ -195,14 +186,40 @@
       color: rgba(255, 255, 255, 0.6);
       background-color: #000;
     }
+
+    /* ⚠️ עיצוב לניידים */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+      .hero a.button {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+      .שורה-עליונה {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .תפריט-ניווט {
+        gap: 1rem;
+      }
+      .אלבום-תמונות img {
+        width: 90%;
+        height: auto;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- פס עליון -->
   <div class="שורה-עליונה">
-    <div class="שורה-שמאל">tkhelet.engineering@gmail.com | 050-844-8818  &nbsp;</div>
-    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שהתכלת דומה לים וים דומה לרקיע ורקיע דומה לכיסא הכבוד״</div>
+    <div class="שורה-ימין">tkhelet.engineering@gmail.com | 050-844-8818</div>
+    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין...״</div>
   </div>
 
   <!-- סרגל ניווט -->
@@ -217,7 +234,7 @@
     </div>
   </div>
 
-  <!-- כותרת עם רקע -->
+  <!-- כותרת -->
   <div class="hero">
     <div class="hero-content">
       <h1>בדק בית מקצועי - שקט נפשי עתידי</h1>
@@ -242,12 +259,12 @@
     </div>
   </div>
 
-  <!-- אלבום תמונות -->
+  <!-- גלריית תמונות -->
   <div class="אלבום-תמונות">
-    <img src="תמונות/pexels-shkrabaanthony-4981774.jpg" alt="תמונה 1">
-    <img src="תמונות/pexels-shkrabaanthony-4981795.jpg" alt="תמונה 2">
-    <img src="תמונות/pexels-shkrabaanthony-4981802.jpg" alt="תמונה 3">
-    <img src="תמונות/pexels-ivan-samkov-8962799.jpg" alt="תמונה 4">
+    <img src="תמונות/pexels-shkrabaanthony-4981774.jpg" alt="">
+    <img src="תמונות/pexels-shkrabaanthony-4981795.jpg" alt="">
+    <img src="תמונות/pexels-shkrabaanthony-4981802.jpg" alt="">
+    <img src="תמונות/pexels-ivan-samkov-8962799.jpg" alt="">
   </div>
 
   <!-- פוטר -->
