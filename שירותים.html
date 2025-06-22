@@ -12,32 +12,35 @@
       background-color: gainsboro;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
-.שורה-עליונה {
-  background-color: #eeeeee;
-  height: 30px;
-  font-size: 12px;
-  color: #444;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  position: relative;
-}
+    .שורה-עליונה {
+      background-color: #eeeeee;
+      height: 30px;
+      font-size: 12px;
+      color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      position: relative;
+    }
 
-.שורה-עליונה .טקסט-מרכזי {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
+    .שורה-עליונה .טקסט-מרכזי {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
 
-.שורה-עליונה .צד-שמאל {
-  margin-left: auto;
-  white-space: nowrap;
-}
+    .שורה-עליונה .צד-שמאל {
+      margin-left: auto;
+      white-space: nowrap;
+    }
 
-/* סרגל ניווט */
     .סרגל-כלים {
       display: flex;
       justify-content: space-between;
@@ -72,6 +75,13 @@
     .תפריט-ניווט a:hover {
       color: #0077aa;
       text-decoration: underline;
+    }
+
+    .המבורגר {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
     }
 
     .שירותים-כותרת {
@@ -227,8 +237,7 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     }
 
-
- @media (max-width: 768px) {
+    @media (max-width: 768px) {
       .תפריט-ניווט {
         display: none;
         flex-direction: column;
@@ -287,7 +296,7 @@
       background-color: #005f88;
     }
 
-   footer {
+    footer {
       text-align: center;
       padding: 1rem;
       font-size: 14px;
@@ -297,22 +306,18 @@
     footer p:first-child {
       margin-bottom: 2px;
     }
-
   </style>
 </head>
 <body>
 
-  <!-- פס עליון -->
   <div class="שורה-עליונה">
-
-    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שהתכלת דומה לים וים דומה לרקיע ורקיע דומה לכיסא הכבוד״</div>
+    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין...״</div>
   </div>
 
-
-  <!-- סרגל ניווט -->
   <div class="סרגל-כלים">
     <img src="תמונות/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה">
-    <div class="תפריט-ניווט">
+    <div class="המבורגר" onclick="toggleMenu()">☰</div>
+    <div class="תפריט-ניווט" id="navMenu">
       <a href="index.html">בית</a>
       <a href="אודות.html">אודות</a>
       <a href="שירותים.html">שירותים</a>
@@ -321,27 +326,13 @@
     </div>
   </div>
 
-  <div class="מרווח-סרגל"></div>
-  <div class="מרווח-סרגל"></div>
-
-
   <section class="שירותים-כותרת">
     <h3>שירותים</h3>
-    <p>
-      בדיקות מקיפות ומקצועיות לדירות חדשות ויד שנייה<br>
-      אנו מבצעים בדיקות חשמל ולחץ מים כולל בדיקת עומסים, שקעים ולחץ בצנרת,<br>
-      לצד בדיקות יסודיות בשטחים הציבוריים של הבניין – לובי, מעלית, חניה ועוד.<br>
-      בנוסף לכך, אנו משווים את הממצאים לתכניות הבנייה: גובה תקרה, מידות מדויקות, מיקומי נקודות החשמל ועוד.<br>
-      בסיום כל בדיקה תינתן ללקוח דוח מסכם מקצועי, מפורט וברור,<br>
-      כולל תמונות, ליקויים והמלצות להמשך טיפול.
-    </p>
+    <p>בדיקות מקיפות... כולל תמונות, ליקויים והמלצות.</p>
   </section>
 
   <section class="טקסט-שירותים">
-    <p>
-      אנו ב"תכלת הנדסה" מחויבים לדיוק, אמינות ושירות אישי לאורך כל תהליך הבדיקה.<br>
-      פנו אלינו לקבלת ייעוץ מקצועי בצור קשר והתחילו בתהליך בדק הבית שלכם עם שקט נפשי אמיתי.
-    </p>
+    <p>אנו ב"תכלת הנדסה" מחויבים לדיוק, אמינות ושירות אישי...</p>
   </section>
 
   <div class="תמונות-שירותים">
@@ -350,11 +341,11 @@
       <div class="כיתוב-על-תמונה">איתור ליקויים</div>
     </div>
     <div class="תמונת-שירות">
-     <a href="בדיקת תשתיות.html"><img src="תמונות/בדיקות-צילום-פנים-צנרת-1-300x300.jpg" alt=""></a> 
+      <a href="בדיקת תשתיות.html"><img src="תמונות/בדיקות-צילום-פנים-צנרת-1-300x300.jpg" alt=""></a>
       <div class="כיתוב-על-תמונה">בדיקת תשתיות</div>
     </div>
     <div class="תמונת-שירות">
-     <a href="בדיקות תרמיות.html"> <img src="תמונות/מצלמה-לבדיקת-רטיבות-300x300.jpg" alt=""></a>
+      <a href="בדיקות תרמיות.html"><img src="תמונות/מצלמה-לבדיקת-רטיבות-300x300.jpg" alt=""></a>
       <div class="כיתוב-על-תמונה">בדיקות תרמיות</div>
     </div>
   </div>
@@ -362,15 +353,14 @@
   <div class="כותרת-אלבום"><h3>בדיקה לדוגמה</h3></div>
 
   <div class="אלבום-תמונות">
-     <img src="תמונות/בדק בית 3.jpeg" alt="תיאור תמונה 3">
-    <img src="תמונות/בדק בית 1.jpeg" alt="תיאור תמונה 1">
-    <img src="תמונות/בדק בית 2.jpeg" alt="תיאור תמונה 2">
-    <img src="תמונות/בדק בית 4.jpeg" alt="תיאור תמונה 4">
-    <img src="תמונות/בדק בית 5.jpeg" alt="" >
+    <img src="תמונות/בדק בית 3.jpeg" alt="">
+    <img src="תמונות/בדק בית 1.jpeg" alt="">
+    <img src="תמונות/בדק בית 2.jpeg" alt="">
+    <img src="תמונות/בדק בית 4.jpeg" alt="">
+    <img src="תמונות/בדק בית 5.jpeg" alt="">
     <img src="תמונות/בדק בית6.jpeg" alt="">
     <img src="תמונות/בדק בית 7.jpeg" alt="">
     <img src="תמונות/בדק בית 8.jpeg" alt="">
-
   </div>
 
   <footer>
@@ -378,9 +368,6 @@
     <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
   </footer>
 
-
-
- <!-- JavaScript לתפריט -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById("navMenu");
@@ -389,3 +376,4 @@
   </script>
 </body>
 </html>
+
