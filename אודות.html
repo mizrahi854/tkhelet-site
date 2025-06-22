@@ -12,77 +12,6 @@
       background-color: gainsboro;
     }
 
-    .סרגל-כלים {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #eee;
-      padding: 1rem 2rem;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .סרגל-כלים img {
-      height: 45px;
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #000;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #00a2c8;
-      text-decoration: underline;
-    }
-
-    .תפריט-מובייל {
-      display: none;
-      font-size: 28px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #eee;
-        width: 100%;
-        text-align: center;
-        padding: 1rem 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      .תפריט-מובייל {
-        display: block;
-        color: #000;
-      }
-    }
-
-    .מרווח-סרגל {
-      height: 100px;
-    }
-
     .אודות {
       max-width: 100%;
       margin: 2rem auto;
@@ -106,7 +35,10 @@
     .אודות::before {
       content: "";
       position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
@@ -115,12 +47,15 @@
       position: relative;
       z-index: 2;
       margin: 0.5rem 0;
+      color: white;
+      border-radius: 5px;
       max-width: 600px;
     }
 
     .אודות h3 {
       font-size: 2rem;
       font-weight: bold;
+      position: relative;
     }
 
     .אודות h3:first-child::after {
@@ -134,6 +69,58 @@
       background-color: rgb(176, 34, 34);
       border-radius: 2px;
       z-index: 3;
+    }
+
+    h2 {
+      text-align: center;
+      color: #0077aa;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .סרגל-כלים {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #eee;
+      padding: 1rem;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .סרגל-כלים img {
+      height: 50px;
+      margin-right: 1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      margin-left: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #00a2c8;
+    }
+
+    .מרווח-סרגל {
+      height: 100px;
     }
 
     .טקסט-אודות {
@@ -182,18 +169,29 @@
     footer {
       text-align: center;
       padding: 1rem;
+    }
+
+    footer p {
+      margin: 0;
       font-size: 14px;
       color: rgba(45, 45, 45, 0.6);
+    }
+
+    footer p:first-child {
+      margin-bottom: 3px;
+    }
+
+    footer strong {
+      font-weight: normal;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <!-- סרגל ניווט -->
   <div class="סרגל-כלים">
-    <img src="תמונות/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו">
-    <button class="תפריט-מובייל" onclick="toggleMenu()">☰</button>
-    <nav id="main-nav">
+    <img src="תמונות/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="">
+    <nav>
       <a href="index.html">בית</a>
       <a href="אודות.html">אודות</a>
       <a href="שירותים.html">שירותים</a>
@@ -204,43 +202,55 @@
 
   <div class="מרווח-סרגל"></div>
 
-  <!-- בלוק כותרת -->
   <div class="אודות">
     <h3>אודות</h3>
     <p>
       ברוכים הבאים ל"תכלת הנדסה" – משרד בדק בית מקצועי בניהול מוטי אדרי,<br>
-      הנדסאי בניין ומנהל עבודה מוסמך. אנו מתמחים בליווי רוכשי דירות,<br>
-      איתור ליקויים ומתן דוחות מקצועיים.
+      הנדסאי בניין ומנהל עבודה מוסמך.<br>
+      אנו מתמחים בליווי רוכשי דירות חדשות ויד שנייה,<br>
+      איתור ליקויים,<br>
+      ומתן דוחות מקצועיים שיעניקו לכם ביטחון ושקט נפשי<br>
+      בקנייה החשובה בחייכם.
     </p>
   </div>
 
-  <!-- טקסט מורחב -->
   <div class="טקסט-אודות">
-    <h2 style="color:black;">מי אנחנו?</h2>
+    <h2 style="text-align: center;color: black;">מי אנחנו?</h2>
     <p>
-      שמי מוטי אדרי – הנדסאי בניין ומנהל עבודה מוסמך עם ניסיון רב בפיקוח ובדק.<br>
-      הקמתי את תכלת הנדסה כדי להעניק ללקוחות ביטחון, שקיפות ומקצועיות מלאה.<br><br>
-      אנחנו מתמחים בבדיקות לפני קניית דירה, איתור ליקויים ובדיקות לפני מסירה.<br>
-      ✔️ מקצועיות ללא פשרות<br>
-      ✔️ ליווי אישי<br>
-      ✔️ שימוש בציוד מתקדם<br>
-      ✔️ יחס אנושי ואכפתי
+      אז שלום, שמי מוטי אדרי – הנדסאי בניין, מנהל עבודה מוסמך לעבודות בנייה ובנייה הנדסית,<br>
+      ובעל תעודה רשמית מטעם משרד העבודה לביצוע בדק בית ואיתור ליקויי בנייה.<br><br>
+
+      במהלך השנים עסקתי בפיקוח בנייה בפרויקטים מגוונים, מטעם חברות שונות –<br>
+      ואני מביא איתי ניסיון שטח, עין מקצועית חדה וגישה שירותית ואנושית.<br><br>
+
+      הקמתי את תכלת הנדסה כדי לתת מענה מקצועי, מדויק ואמין לרוכשי דירות חדשות ויד שנייה –<br>
+      ולכל מי שנתקל בתקלה בדירה ולא יודע איך לפתור את הבעיה.<br><br>
+
+      המטרה שלנו ברורה: לאתר כל ליקוי אפשרי בדירה ולתת ללקוחות שלנו שקט נפשי לפני קבלת החלטה כל כך חשובה.<br><br>
+
+      אני מאמין ששירות טוב מתחיל בהקשבה ללקוח, וממשיך בביצוע בדיקה יסודית עם דיווח אמין וברור –<br>
+      כדי שתדעו בדיוק מה מצב הנכס שאתם עומדים לרכוש או למסור.<br><br>
+
+      הערכים שמובילים אותי:<br>
+      ✔️ מקצועיות – עבודה מדויקת, לפי תקנים ובאמצעות ציוד מתקדם.<br>
+      ✔️ שקיפות – כל ממצא מדווח ומוסבר בצורה ברורה וללא הפתעות.<br>
+      ✔️ יחס אישי – זמינות, סבלנות וליווי מלא לאורך כל הדרך.<br>
+      ✔️ דיוק ואמינות – כי בבדק בית אין מקום לפשרות.<br><br>
+
+      אשמח לעזור גם לכם – בין אם אתם לקראת קבלת דירה חדשה מקבלן, או שוקלים לרכוש נכס מיד שנייה –<br>
+      אל תוותרו על בדיקה מקצועית.<br>
+      זה ההבדל בין עסקה בטוחה לבין תיקונים יקרים בעתיד.
     </p>
   </div>
+
+
 
   <footer>
     <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
     <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('main-nav');
-      nav.classList.toggle('show');
-    }
-  </script>
 </body>
 </html>
-
 
 
