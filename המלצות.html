@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>המלצות מלקוחות - תכלת הנדסה</title>
   <style>
     body {
@@ -11,31 +11,30 @@
       background-color: #f9f9f9;
     }
 
-.שורה-עליונה {
-  background-color: #eeeeee;
-  height: 30px;
-  font-size: 12px;
-  color: #444;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  position: relative;
-}
+    .שורה-עליונה {
+      background-color: #eeeeee;
+      height: 30px;
+      font-size: 12px;
+      color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      position: relative;
+    }
 
-.שורה-עליונה .טקסט-מרכזי {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
+    .שורה-עליונה .טקסט-מרכזי {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
 
-.שורה-עליונה .צד-שמאל {
-  margin-left: auto;
-  white-space: nowrap;
-}
+    .שורה-עליונה .צד-שמאל {
+      margin-left: auto;
+      white-space: nowrap;
+    }
 
-/* סרגל ניווט */
     .סרגל-כלים {
       display: flex;
       justify-content: space-between;
@@ -72,7 +71,14 @@
       text-decoration: underline;
     }
 
- @media (max-width: 768px) {
+    .המבורגר {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    @media (max-width: 768px) {
       .תפריט-ניווט {
         display: none;
         flex-direction: column;
@@ -94,7 +100,6 @@
         display: block;
       }
     }
-
 
     .רקע-עליון {
       background-image: url('תמונות/pexels-quang-nguyen-vinh-222549-2138126.jpg');
@@ -127,11 +132,10 @@
     .תוכן-עליון .קו-אדום {
       width: 120px;
       height: 4px;
-      background-color:  rgb(176, 34, 34);
+      background-color: rgb(176, 34, 34);
       margin: 0 auto;
       border-radius: 2px;
     }
-
 
     .המלצות {
       max-width: 1000px;
@@ -166,17 +170,16 @@
 </head>
 <body>
 
-
   <!-- פס עליון -->
   <div class="שורה-עליונה">
-
     <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שהתכלת דומה לים וים דומה לרקיע ורקיע דומה לכיסא הכבוד״</div>
   </div>
 
   <!-- סרגל ניווט -->
   <div class="סרגל-כלים">
     <img src="תמונות/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה">
-    <div class="תפריט-ניווט">
+    <div class="המבורגר" onclick="toggleMenu()">☰</div>
+    <div class="תפריט-ניווט" id="navMenu">
       <a href="index.html">בית</a>
       <a href="אודות.html">אודות</a>
       <a href="שירותים.html">שירותים</a>
@@ -199,29 +202,22 @@
       <strong>יוסי לוי, קריית מוצקין</strong>
       אין לי מילים לתאר את המקצועיות, האמינות והיחס החם שקיבלתי מתכלת הנדסה. הבדיקה הייתה יסודית, מפורטת, ונתנה לי שקט נפשי בקניית הדירה. ממליץ מכל הלב!
     </div>
-
     <div class="המלצה">
       <strong>הילה מזרחי, חיפה</strong>
       השירות שקיבלנו היה מעל ומעבר. סבלנות, הסברים מדויקים והכי חשוב – מצאו ליקויים שבחיים לא היינו שמים לב אליהם לבד. פשוט הצילו אותנו מטעויות יקרות.
     </div>
-
     <div class="המלצה">
       <strong>אמיר כהן, ראשון לציון</strong>
       התהליך היה מהיר, מקצועי ואדיב. מהשיחה הראשונה ועד קבלת הדוח המלא – פשוט שירות מהשורה הראשונה. תודה על הכול!
     </div>
-
     <div class="המלצה">
       <strong>דנה שחר, תל אביב</strong>
       התנהלות מרשימה, ידע מקצועי נרחב ואמינות מלאה. תכלת הנדסה זה לא עוד חברה – זה שותף אמיתי בתהליך רכישת הדירה. תודה!
     </div>
-
     <div class="המלצה">
       <strong>משה בן עטר, עפולה</strong>
       ממליץ בחום! הגיעו בזמן, הסבירו כל דבר, גילו ליקויי בניה שהקבלן התחייב לתקן – שווים כל שקל.
     </div>
-
-    <!-- תוכל להוסיף כאן עוד המלצות דומות לפי אותו מבנה -->
-
   </div>
 
   <footer>
@@ -229,14 +225,12 @@
     <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
   </footer>
 
- <!-- JavaScript לתפריט -->
+  <!-- JavaScript לתפריט -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById("navMenu");
       menu.classList.toggle("active");
     }
   </script>
-
 </body>
 </html>
-
