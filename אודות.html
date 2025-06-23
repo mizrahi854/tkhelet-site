@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אודות</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: gainsboro;
+    }
+
+    .שורה-עליונה {
+      background-color: #eeeeee;
+      height: 30px;
+      font-size: 12px;
+      color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .שורה-עליונה .טקסט-מרכזי {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .שורה-עליונה .צד-שמאל {
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    .סרגל-כלים {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 30px;
+      z-index: 1000;
+    }
+
+    .סרגל-כלים img {
+      height: 45px;
+    }
+
+    .תפריט-ניווט {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .תפריט-ניווט a {
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 500;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    .תפריט-ניווט a:hover {
+      color: #0077aa;
+      text-decoration: underline;
+    }
+
+    .המבורגר {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    @media (max-width: 768px) {
+      .תפריט-ניווט {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 999;
+      }
+
+      .תפריט-ניווט.active {
+        display: flex;
+      }
+
+      .המבורגר {
+        display: block;
+      }
+    }
+
+    .אודות {
+      max-width: 100%;
+      margin: 2rem auto;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      background-image: url('https://www.paztech.co.il/assets/img/aluminium2.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .אודות::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .אודות h3, .אודות p {
+      position: relative;
+      z-index: 2;
+      margin: 0.5rem 0;
+      color: white;
+      border-radius: 5px;
+      max-width: 600px;
+    }
+
+    .אודות h3 {
+      font-size: 2rem;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .אודות h3:first-child::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 4px;
+      background-color: rgb(176, 34, 34);
+      border-radius: 2px;
+      z-index: 3;
+    }
+
+    h2 {
+      text-align: center;
+      color: #0077aa;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .טקסט-אודות {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .צור-קשר {
+      background-color: #f5f5f5;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      color: rgba(45, 45, 45, 0.6);
+    }
+
+    footer p:first-child {
+      margin-bottom: 3px;
+    }
+
+    footer strong {
+      font-weight: normal;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- פס עליון -->
+  <div class="שורה-עליונה">
+    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שהתכלת דומה לים וים דומה לרקיע ורקיע דומה לכיסא הכבוד״</div>
+  </div>
+
+  <!-- סרגל ניווט -->
+  <div class="סרגל-כלים">
+    <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה">
+    <div class="המבורגר" onclick="toggleMenu()">☰</div>
+    <div class="תפריט-ניווט" id="navMenu">
+      <a href="index.html">בית</a>
+      <a href="אודות.html">אודות</a>
+      <a href="שירותים.html">שירותים</a>
+      <a href="המלצות.html">המלצות</a>
+      <a href="צור קשר.html">צור קשר</a>
+    </div>
+  </div>
+
+  <div class="אודות">
+    <h3>אודות</h3>
+    <p>
+      ברוכים הבאים ל"תכלת הנדסה" – משרד בדק בית מקצועי בניהול מוטי אדרי,<br>
+      הנדסאי בניין ומנהל עבודה מוסמך.<br>
+      אנו מתמחים בליווי רוכשי דירות חדשות ויד שנייה,<br>
+      איתור ליקויים,<br>
+      ומתן דוחות מקצועיים שיעניקו לכם ביטחון ושקט נפשי<br>
+      בקנייה החשובה בחייכם.
+    </p>
+  </div>
+
+  <div class="טקסט-אודות">
+    <h2 style="color: black;">מי אנחנו?</h2>
+    <p>
+      אז שלום, שמי מוטי אדרי – הנדסאי בניין, מנהל עבודה מוסמך לעבודות בנייה ובנייה הנדסית,<br>
+      ובעל תעודה רשמית מטעם משרד העבודה לביצוע בדק בית ואיתור ליקויי בנייה.<br><br>
+
+      במהלך השנים עסקתי בפיקוח בנייה בפרויקטים מגוונים, מטעם חברות שונות –<br>
+      ואני מביא איתי ניסיון שטח, עין מקצועית חדה וגישה שירותית ואנושית.<br><br>
+
+      הקמתי את תכלת הנדסה כדי לתת מענה מקצועי, מדויק ואמין לרוכשי דירות חדשות ויד שנייה –<br>
+      ולכל מי שנתקל בתקלה בדירה ולא יודע איך לפתור את הבעיה.<br><br>
+
+      המטרה שלנו ברורה: לאתר כל ליקוי אפשרי בדירה ולתת ללקוחות שלנו שקט נפשי לפני קבלת החלטה כל כך חשובה.<br><br>
+
+      אני מאמין ששירות טוב מתחיל בהקשבה ללקוח, וממשיך בביצוע בדיקה יסודית עם דיווח אמין וברור –<br>
+      כדי שתדעו בדיוק מה מצב הנכס שאתם עומדים לרכוש או למסור.<br><br>
+
+      הערכים שמובילים אותי:<br>
+      ✔️ מקצועיות – עבודה מדויקת, לפי תקנים ובאמצעות ציוד מתקדם.<br>
+      ✔️ שקיפות – כל ממצא מדווח ומוסבר בצורה ברורה וללא הפתעות.<br>
+      ✔️ יחס אישי – זמינות, סבלנות וליווי מלא לאורך כל הדרך.<br>
+      ✔️ דיוק ואמינות – כי בבדק בית אין מקום לפשרות.<br><br>
+
+      אשמח לעזור גם לכם – בין אם אתם לקראת קבלת דירה חדשה מקבלן, או שוקלים לרכוש נכס מיד שנייה –<br>
+      אל תוותרו על בדיקה מקצועית.<br>
+      זה ההבדל בין עסקה בטוחה לבין תיקונים יקרים בעתיד.
+    </p>
+  </div>
+
+  <footer>
+    <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
+    <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
+  </footer>
+
+  <!-- JavaScript לתפריט -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("navMenu");
+      menu.classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

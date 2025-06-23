@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>תכלת הנדסה</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .שורה-עליונה {
+  background-color: #eeeeee;
+  height: 30px;
+  font-size: 12px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.שורה-עליונה .טקסט-מרכזי {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.שורה-עליונה .צד-שמאל {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+
+    /* סרגל כלים */
+    .סרגל-כלים {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 30px;
+      z-index: 1000;
+    }
+
+    .סרגל-כלים img {
+      height: 45px;
+    }
+
+    .תפריט-ניווט {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .תפריט-ניווט a {
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 500;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    .תפריט-ניווט a:hover {
+      color: #0077aa;
+      text-decoration: underline;
+    }
+
+    /* כפתור המבורגר */
+    .המבורגר {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .תפריט-ניווט {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 999;
+      }
+
+      .תפריט-ניווט.active {
+        display: flex;
+      }
+
+      .המבורגר {
+        display: block;
+      }
+    }
+
+    /* hero */
+    .hero {
+      background-image: url('img/pexels-quang-nguyen-vinh-222549-2138126.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      text-align: center;
+      color: white;
+      padding: 140px 20px 100px;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-color: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .קו-אדום {
+      width: 100px;
+      height: 4px;
+      background-color: #d32f2f;
+      margin: 10px auto 20px;
+      border-radius: 2px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .hero a.button {
+      background-color: #d32f2f;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 18px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .hero a.button:hover {
+      background-color: #aa1f1f;
+    }
+
+    /* אודות */
+    .אודות-בלוק {
+      background-color: #f9f9f9;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .תוכן-אודות {
+      max-width: 800px;
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .תוכן-אודות h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .תוכן-אודות p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- פס עליון -->
+  <div class="שורה-עליונה">
+
+    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שהתכלת דומה לים וים דומה לרקיע ורקיע דומה לכיסא הכבוד״</div>
+  </div>
+
+  <!-- סרגל כלים -->
+  <div class="סרגל-כלים">
+    <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה">
+    <button class="המבורגר" onclick="toggleMenu()">☰</button>
+    <div class="תפריט-ניווט" id="navMenu">
+      <a href="index.html">בית</a>
+      <a href="אודות.html">אודות</a>
+      <a href="שירותים.html">שירותים</a>
+      <a href="המלצות.html">המלצות</a>
+      <a href="צור קשר.html">צור קשר</a>
+    </div>
+  </div>
+
+  <!-- כותרת עם רקע -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>בדק בית מקצועי - שקט נפשי עתידי</h1>
+      <div class="קו-אדום"></div>
+      <p>כאן תוכל להוסיף כותרת משנה מרשימה ומניעה לפעולה שתחזק את המסר שלך.</p>
+      <a class="button" href="צור קשר.html">לשיחת ייעוץ ללא עלות לחץ כאן</a>
+    </div>
+  </div>
+
+  <!-- אודות -->
+  <div class="אודות-בלוק">
+    <div class="תוכן-אודות">
+      <h2>מי אנחנו?</h2>
+      <div class="קו-אדום"></div>
+      <p>
+        ברוכים הבאים ל<strong>תכלת הנדסה</strong> – משרד בדק בית מקצועי בניהול מוטי אדרי,<br>
+        הנדסאי בניין ומנהל עבודה מוסמך.<br><br>
+        אנו מתמחים בליווי רוכשי דירות חדשות ויד שנייה,<br>
+        איתור ליקויים, ומתן דוחות מקצועיים שיעניקו לכם<br>
+        ביטחון ושקט נפשי בקנייה החשובה בחייכם.
+      </p>
+    </div>
+  </div>
+
+  <!-- פוטר -->
+  <footer>
+    <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
+    <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
+  </footer>
+
+  <!-- JavaScript לתפריט -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("navMenu");
+      menu.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
