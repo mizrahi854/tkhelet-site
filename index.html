@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -7,35 +10,28 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Calibri, Arial, sans-serif;
     }
 
     .שורה-עליונה {
-  background-color: #eeeeee;
-  height: 30px;
-  font-size: 12px;
-  color: #444;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  position: relative;
-}
+      background-color: #eeeeee;
+      height: 30px;
+      font-size: 12px;
+      color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      position: relative;
+    }
 
-.שורה-עליונה .טקסט-מרכזי {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
+    .שורה-עליונה .שורה-אמצע {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
 
-.שורה-עליונה .צד-שמאל {
-  margin-left: auto;
-  white-space: nowrap;
-}
-
-
-    /* סרגל כלים */
     .סרגל-כלים {
       display: flex;
       justify-content: space-between;
@@ -72,7 +68,6 @@
       text-decoration: underline;
     }
 
-    /* כפתור המבורגר */
     .המבורגר {
       display: none;
       font-size: 24px;
@@ -104,67 +99,98 @@
       }
     }
 
-    /* hero */
-    .hero {
-      background-image: url('img/pexels-quang-nguyen-vinh-222549-2138126.jpg');
-      background-size: cover;
-      background-position: center;
+    .hero-slider {
       position: relative;
-      text-align: center;
-      color: white;
-      padding: 140px 20px 100px;
+      height: 60vh;
+      overflow: hidden;
     }
 
-    .hero::after {
+    .slide {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      animation: zoomEffect 20s infinite;
+    }
+
+    .slide::before {
       content: '';
       position: absolute;
       top: 0; right: 0; bottom: 0; left: 0;
-      background-color: rgba(0,0,0,0.6);
+      background: rgba(0, 0, 0, 0.45);
       z-index: 0;
     }
 
-    .hero-content {
-      position: relative;
+    .slide.active {
+      opacity: 1;
       z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
     }
 
-    .hero h1 {
-      font-size: 36px;
+    @keyframes zoomEffect {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .hero-content {
+      z-index: 1;
+      max-width: 800px;
+      padding: 10px 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 32px;
       margin-bottom: 10px;
     }
 
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content a {
+      display: inline-block;
+      background-color: #4a98e6;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      background-color: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 10;
+      padding: 10px;
+    }
+
+    .arrow.right { left: 10px; }
+    .arrow.left { right: 10px; }
+
     .קו-אדום {
-      width: 100px;
+      width: 80px;
       height: 4px;
-      background-color: #d32f2f;
+      background-color: #4a98e6;
       margin: 10px auto 20px;
       border-radius: 2px;
     }
 
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    .hero a.button {
-      background-color: #d32f2f;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-size: 18px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      transition: 0.3s;
-    }
-
-    .hero a.button:hover {
-      background-color: #aa1f1f;
-    }
-
-    /* אודות */
     .אודות-בלוק {
       background-color: #f9f9f9;
       padding: 60px 20px;
@@ -173,24 +199,172 @@
     }
 
     .תוכן-אודות {
-      max-width: 800px;
+      max-width: 1000px;
       background-color: white;
       padding: 40px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: right;
+    }
+
+    .אודות-תוכן-פנימי {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .טקסט-אודות {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .תמונה-אודות {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .תמונה-אודות img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .שירותים-בלוק {
+      background-color: #f0f4ff;
+      padding: 60px 20px;
       text-align: center;
     }
 
-    .תוכן-אודות h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-      color: #222;
+    .שירותים-כותרת {
+      font-size: 32px;
+      color: #4a67d0;
+      margin-bottom: 40px;
+      font-weight: bold;
     }
 
-    .תוכן-אודות p {
+    .שירותים-תמונות {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .שירות-פריט {
+      position: relative;
+      width: 280px;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .שירות-פריט:hover {
+      transform: scale(1.03);
+    }
+
+    .שירות-טקסט {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #ffffff;
       font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .כפתור-לכל-השירותים {
+      margin-top: 40px;
+    }
+
+    .כפתור-לכל-השירותים a {
+      display: inline-block;
+      background-color: #4a98e6;
+      color: white;
+      padding: 14px 32px;
+      font-size: 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .כפתור-לכל-השירותים a:hover {
+      background-color: #3b83cb;
+    }
+
+    .תהליך-בלוק {
+      background-color: #f9fafe;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .תהליך-כותרת {
+      font-size: 32px;
+      color: #2b5cb8;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .תהליך-טקסט-מבוא {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 50px;
       line-height: 1.8;
       color: #333;
+    }
+
+    .שלבים {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+ .שלב {
+  background-color: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  text-align: right;
+  position: relative;
+}
+
+/* זה העיגול ממורכז לגובה באמצע בצד ימין */
+.שלב .מספר {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  background-color: #4a98e6;
+  color: white;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+    .שלב h3 {
+      font-size: 22px;
+      color: #2b5cb8;
+      margin-bottom: 10px;
+    }
+
+    .שלב p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #444;
     }
 
     footer {
@@ -203,14 +377,10 @@
   </style>
 </head>
 <body>
-
-  <!-- פס עליון -->
-  <div class="שורה-עליונה">
-
-    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שהתכלת דומה לים וים דומה לרקיע ורקיע דומה לכיסא הכבוד״</div>
+    <div class="שורה-עליונה">
+    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין...״</div>
   </div>
 
-  <!-- סרגל כלים -->
   <div class="סרגל-כלים">
     <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה">
     <button class="המבורגר" onclick="toggleMenu()">☰</button>
@@ -223,43 +393,183 @@
     </div>
   </div>
 
-  <!-- כותרת עם רקע -->
-  <div class="hero">
-    <div class="hero-content">
-      <h1>בדק בית מקצועי - שקט נפשי עתידי</h1>
-      <div class="קו-אדום"></div>
-      <p>כאן תוכל להוסיף כותרת משנה מרשימה ומניעה לפעולה שתחזק את המסר שלך.</p>
-      <a class="button" href="צור קשר.html">לשיחת ייעוץ ללא עלות לחץ כאן</a>
+  <div class="hero-slider">
+    <button class="arrow left" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="arrow right" onclick="changeSlide(1)">&#10095;</button>
+
+    <div class="slide" style="background-image: url('img/WhatsApp Image 2025-06-24 at 12.57.48.jpeg');">
+      <div class="hero-content">
+        <h1>בדק בית לדירה יד שנייה - לפני קנייה</h1>
+        <p>מה שנראה טוב בעין – לא תמיד תקין. נבדוק את כל מה שמוסתר לפני שחותמים.</p>
+        <a href="#">לפרטים לחצו כאן</a>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image: url('img/WhatsApp Image 2025-06-24 at 12.57.48 (3).jpeg');">
+      <div class="hero-content">
+        <h1>בדק בית לאחר שיפוץ או תמ״א 38</h1>
+        <p>לא כל שיפוץ נגמר כמו שהובטח. בואו נבדוק אם העבודה בוצעה כראוי.</p>
+        <a href="#">לפרטים לחצו כאן</a>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image: url('img/WhatsApp Image 2025-06-24 at 12.57.48 (2).jpeg');">
+      <div class="hero-content">
+        <h1>בדק בית לבית פרטי / וילה</h1>
+        <p>בבית גדול יש גם יותר סיכוי לליקויים. אנחנו איתכם בכל מטר.</p>
+        <a href="#">לפרטים לחצו כאן</a>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image: url('img/WhatsApp Image 2025-06-24 at 12.57.47.jpeg');">
+      <div class="hero-content">
+        <h1>דו”ח ליקויים מקצועי וברור</h1>
+        <p>דו״ח מסודר עם תמונות, הסברים והמלצות לתיקון – קל להבין, קל לפעול.</p>
+        <a href="#">לצפייה בדוגמה</a>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image: url('img/WhatsApp Image 2025-06-24 at 12.57.47 (1).jpeg');">
+      <div class="hero-content">
+        <h1>איתור נזילות ורטיבויות בדיוק הנדסי</h1>
+        <p>באמצעות מצלמה תרמית, ללא הרס – כולל דו”ח מקצועי ופתרון ממוקד</p>
+        <a href="#">לפרטים לחצו כאן</a>
+      </div>
     </div>
   </div>
 
-  <!-- אודות -->
+    <div class="slide active" style="background-image: url('img/WhatsApp Image 2025-06-24 at 12.57.48.jpeg');">
+      <div class="hero-content">
+        <h1>בדק בית לדירה יד שנייה - לפני קנייה</h1>
+        <p>מה שנראה טוב בעין – לא תמיד תקין. נבדוק את כל מה שמוסתר לפני שחותמים.</p>
+        <a href="#">לפרטים לחצו כאן</a>
+      </div>
+    </div>
+
+    <!-- שאר הסליידים... -->
+  </div>
+
   <div class="אודות-בלוק">
     <div class="תוכן-אודות">
-      <h2>מי אנחנו?</h2>
-      <div class="קו-אדום"></div>
-      <p>
-        ברוכים הבאים ל<strong>תכלת הנדסה</strong> – משרד בדק בית מקצועי בניהול מוטי אדרי,<br>
-        הנדסאי בניין ומנהל עבודה מוסמך.<br><br>
-        אנו מתמחים בליווי רוכשי דירות חדשות ויד שנייה,<br>
-        איתור ליקויים, ומתן דוחות מקצועיים שיעניקו לכם<br>
-        ביטחון ושקט נפשי בקנייה החשובה בחייכם.
-      </p>
+      <div class="אודות-תוכן-פנימי">
+        <div class="טקסט-אודות">
+          <p>
+            <strong>מי אנחנו</strong><br><br>
+            תכלת הנדסה מספקת שירותי בדק בית וביקורת מבנים ברמה הגבוהה ביותר – על פי התקנים המחמירים בישראל.<br><br>
+            הבדיקות מבוצעות על ידי אנשי מקצוע מוסמכים, באמצעות ציוד מתקדם, ומתבצעות בצורה אובייקטיבית, דיסקרטית ומדויקת.<br><br>
+            אנו שמים דגש על שקיפות מלאה, שפה ברורה ללקוח, ודוח מפורט שמעניק ביטחון בקבלת החלטות – לפני קנייה, אחרי קבלת מפתח, או לאחר שיפוץ.
+          </p>
+        </div>
+        <div class="תמונה-אודות">
+          <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="תמונה של בדק בית">
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- פוטר -->
+  <div class="שירותים-בלוק">
+    <h2 class="שירותים-כותרת">השירותים שלנו</h2>
+    <div class="שירותים-תמונות">
+      <a href="בדק-בית-חדשה.html" class="שירות-פריט" style="background-image: url('img/service1.jpg');">
+        <div class="שירות-טקסט">בדק בית לדירה חדשה מקבלן</div>
+      </a>
+      <a href="בדיקה-יד-שניה.html" class="שירות-פריט" style="background-image: url('img/service2.jpg');">
+        <div class="שירות-טקסט">בדיקה לפני רכישת דירה מיד שנייה</div>
+      </a>
+      <a href="בדק-בית-וילה.html" class="שירות-פריט" style="background-image: url('img/service3.jpg');">
+        <div class="שירות-טקסט">בדק בית לבית פרטי / וילה</div>
+      </a>
+      <a href="ביקורת-שיפוץ.html" class="שירות-פריט" style="background-image: url('img/service4.jpg');">
+        <div class="שירות-טקסט">ביקורת לאחר שיפוץ או חיזוק</div>
+      </a>
+      <a href="איתור-רטיבות.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-24 at 16.08.48.jpeg');">
+        <div class="שירות-טקסט">בדיקת רטיבות ואיתור נזילות</div>
+      </a>
+      
+    </div>
+    <div class="כפתור-לכל-השירותים">
+  <a href="שירותים.html"> לכל השירותים שלנו</a>
+</div>
+
+  </div>
+
+
+  <!-- תהליך בדק הבית -->
+  <div class="תהליך-בלוק">
+    <h2 class="תהליך-כותרת">תהליך בדק הבית – כך אנחנו עובדים</h2>
+    <p class="תהליך-טקסט-מבוא">
+      בתכלת הנדסה, כל תהליך בדק בית מתבצע על פי פרוטוקול מסודר וסטנדרטים מחמירים, במטרה להבטיח גילוי מקסימלי של ליקויים ומתן תמונת מצב מלאה ואמינה ללקוח.
+    </p>
+
+    <div class="שלבים">
+
+      <div class="שלב">
+        <div class="מספר">1</div>
+        <h3>איסוף פרטי הנכס ותיאום בדיקה</h3>
+        <p>התהליך מתחיל בשיחה עם הלקוח, בה אנו אוספים פרטים רלוונטיים: סוג הנכס, מיקום, שלב העסקה ומטרת הבדיקה.<br>בהתאם לכך, אנו מתאמים מועד נוח לבדיקה בשטח.</p>
+      </div>
+
+      <div class="שלב">
+        <div class="מספר">2</div>
+        <h3>בדיקה בשטח – על ידי מהנדס מוסמך</h3>
+        <p>מהנדס מוסמך מבצע בדיקה מקיפה על פי התקנים הישראליים, באמצעות ציוד מתקדם (מד לחות, מצלמה תרמית, פלס לייזר ועוד) – בכל חלקי הנכס.</p>
+      </div>
+
+      <div class="שלב">
+        <div class="מספר">3</div>
+        <h3>תיעוד ליקויים והצלבת נתונים</h3>
+        <p>הליקויים מתועדים בצילומים מקצועיים, מושווים לתקנים, מפרט טכני ותוכניות, במטרה לזהות כל סטייה – גם כזו שאינה נראית לעין.</p>
+      </div>
+
+      <div class="שלב">
+        <div class="מספר">4</div>
+        <h3>הפקת דוח ליקויים הנדסי</h3>
+        <p>הפקת דוח מקצועי, ברור ומפורט עם פירוט ליקויים, צילומים, סעיפי תקן, המלצות תיקון ואומדן עלויות (במידת הצורך).</p>
+      </div>
+
+      <div class="שלב">
+        <div class="מספר">5</div>
+        <h3>ליווי לאחר הבדיקה</h3>
+        <p>לאחר שליחת הדוח – אנו זמינים לכל שאלה, הסבר או ליווי מול קבלנים, עורכי דין או שמאי מקרקעין. אתם לא לבד בתהליך.</p>
+      </div>
+
+    </div>
+  </div>
+
+ 
+  
   <footer>
     <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
     <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
   </footer>
 
-  <!-- JavaScript לתפריט -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById("navMenu");
       menu.classList.toggle("active");
     }
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    function changeSlide(step) {
+      currentSlide = (currentSlide + step + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    setInterval(() => {
+      changeSlide(1);
+    }, 10000);
+
+    showSlide(currentSlide);
   </script>
 </body>
 </html>
+
