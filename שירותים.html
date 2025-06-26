@@ -29,15 +29,10 @@
       position: relative;
     }
 
-    .שורה-עליונה .טקסט-מרכזי {
+    .שורה-עליונה .שורה-אמצע {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      white-space: nowrap;
-    }
-
-    .שורה-עליונה .צד-שמאל {
-      margin-left: auto;
       white-space: nowrap;
     }
 
@@ -84,10 +79,32 @@
       z-index: 1001;
     }
 
-    .שירותים-כותרת {
+    @media (max-width: 768px) {
+      .תפריט-ניווט {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 999;
+      }
+
+      .תפריט-ניווט.active {
+        display: flex;
+      }
+
+      .המבורגר {
+        display: block;
+      }
+    }
+
+    .hero {
       max-width: 100%;
-      margin: 2rem auto;
-      padding: 2rem;
+      margin: 0 auto;
       text-align: center;
       position: relative;
       background-image: url('https://www.paztech.co.il/assets/img/aluminium2.jpg');
@@ -104,7 +121,7 @@
       overflow: hidden;
     }
 
-    .שירותים-כותרת::before {
+    .hero::before {
       content: "";
       position: absolute;
       top: 0; right: 0; bottom: 0; left: 0;
@@ -113,83 +130,77 @@
       border-radius: 10px;
     }
 
-    .שירותים-כותרת h3 {
+    .hero h2 {
       position: relative;
       z-index: 2;
       font-size: 2rem;
       font-weight: bold;
+      color: white;
       margin: 0 0 0.5rem 0;
-      color: white;
     }
 
-    .שירותים-כותרת h3::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 4px;
-      background-color: rgb(176, 34, 34);
-      margin: 0.5rem auto 0 auto;
-      border-radius: 2px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .שירותים-כותרת p {
-      margin-top: 0;
-      margin-bottom: 2rem;
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      line-height: 1.6;
-      font-size: 18px;
-      padding: 0 1rem;
-      color: white;
-    }
-
-    .טקסט-שירותים {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 2rem 2rem 2rem;
-      text-align: center;
-      font-size: 18px;
-      line-height: 1.6;
-      color: #000;
-    }
-
-    .תמונות-שירותים {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin: 2rem auto;
+    .תיאור-שירותים {
       max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #111;
+      text-align: center;
     }
 
-    .תמונת-שירות {
+    .תיאור-שירותים span {
+      color: #005f88;
+      font-weight: bold;
+    }
+
+    .שירותים-בלוק {
+      background-color: #f0f4ff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .שירותים-כותרת {
+      font-size: 32px;
+      color: #4a67d0;
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
+
+    .שירותים-תמונות {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .שירות-פריט {
       position: relative;
-      width: 200px;
-      height: 200px;
+      width: 280px;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
       overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
 
-    .תמונת-שירות img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .שירות-פריט:hover {
+      transform: scale(1.03);
     }
 
-    .כיתוב-על-תמונה {
+    .שירות-טקסט {
       position: absolute;
       bottom: 0;
       width: 100%;
-      background-color: rgba(200,200,200,0.7);
-      text-align: center;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      font-size: 18px;
       font-weight: bold;
-      padding: 0.5rem 0;
-      font-size: 16px;
+      text-align: center;
     }
 
     .כותרת-אלבום {
@@ -237,65 +248,6 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     }
 
-    @media (max-width: 768px) {
-      .תפריט-ניווט {
-        display: none;
-        flex-direction: column;
-        background: #fff;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        padding: 1rem 2rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        z-index: 999;
-      }
-
-      .תפריט-ניווט.active {
-        display: flex;
-      }
-
-      .המבורגר {
-        display: block;
-      }
-    }
-
-    .צור-קשר {
-      background-color: #f5f5f5;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .צור-קשר form {
-      max-width: 400px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .צור-קשר input, .צור-קשר button {
-      padding: 0.7rem;
-      font-size: 16px;
-    }
-
-    .צור-קשר input {
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .צור-קשר button {
-      background-color: #0077aa;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    .צור-קשר button:hover {
-      background-color: #005f88;
-    }
-
     footer {
       text-align: center;
       padding: 1rem;
@@ -311,7 +263,7 @@
 <body>
 
   <div class="שורה-עליונה">
-    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שהתכלת דומה לים וים דומה לרקיע ורקיע דומה לכיסא הכבוד״</div>
+    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין...״</div>
   </div>
 
   <div class="סרגל-כלים">
@@ -326,41 +278,60 @@
     </div>
   </div>
 
-  <section class="שירותים-כותרת">
-    <h3>שירותים</h3>
-    <p>בדיקות מקיפות... כולל תמונות, ליקויים והמלצות.</p>
+  <section class="hero">
+    <h2>השירותים שלנו – בדיקות בדק בית, איתור ליקויים ובקרה הנדסית מקצועית</h2>
   </section>
 
-  <section class="טקסט-שירותים">
-    <p>אנו ב"תכלת הנדסה" מחויבים לדיוק, אמינות ושירות אישי...</p>
+  <section class="תיאור-שירותים">
+    <p>
+      ב<span>"תכלת הנדסה"</span> אנו מציעים <span>מגוון שירותים הנדסיים מתקדמים</span> בתחום בדק בית ואיתור ליקויי בנייה,<br>
+      המיועדים לרוכשי דירות, בעלי נכסים, משקיעים, שוכרים, ועדי בתים ויזמים.<br><br>
+
+      כל שירות מתבצע על ידי <span>מהנדס מוסמך</span> בעל <span>ניסיון שטח</span>, <span>ידע מעשי</span> ותעודות הכשרה מקצועיות מטעם <span>משרד העבודה</span>.<br><br>
+
+      אנו מבצעים <span>בדיקות בדק בית לפני קניית דירה</span>, <span>בדיקות ליקויים בדירות חדשות מקבלן</span>,<br>
+      <span>בדיקות לאחר שיפוץ</span>, <span>איתור רטיבויות ונזילות</span>, <span>חוות דעת לבית משפט</span>,<br>
+      וליווי מקצועי מול קבלנים – תוך הקפדה על <span>כל התקנים ההנדסיים הנדרשים בישראל</span>.<br><br>
+
+      <span>המטרה שלנו</span> – להגן עליכם <span>כלכלית</span>, <span>הנדסית</span> ו<span>משפטית</span>,<br>
+      ולספק לכם <span>מידע אמין, מדויק ומגובה בדו”ח מקצועי מפורט</span>.
+    </p>
   </section>
 
-  <div class="תמונות-שירותים">
-    <div class="תמונת-שירות">
-      <a href="איתור ליקויים.html"><img src="img/צילום מסך 2025-06-18 ב-13.37.59.png" alt=""></a>
-      <div class="כיתוב-על-תמונה">איתור ליקויים</div>
+ 
+ <div class="שירותים-בלוק">
+    <h2 class="שירותים-כותרת">השירותים שלנו</h2>
+    <div class="שירותים-תמונות">
+      <a href="בדק-בית-חדשה.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 01.30.32.jpeg');">
+        <div class="שירות-טקסט">בדק בית לדירה חדשה מקבלן</div>
+      </a>
+      <a href="בדיקה-יד-שניה.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 01.32.52.jpeg');">
+        <div class="שירות-טקסט">בדיקה לפני רכישת דירה מיד שנייה</div>
+      </a>
+      <a href="בדק-בית-וילה.html" class="שירות-פריט" style="background-image: url('img/img5.jpeg');">
+        <div class="שירות-טקסט">בדק בית לבית פרטי / וילה</div>
+      </a>
+      <a href="ביקורת-שיפוץ.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 01.28.23.jpeg');">
+        <div class="שירות-טקסט">ביקורת לאחר שיפוץ או חיזוק</div>
+      </a>
+      <a href="איתור-רטיבות.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-24 at 16.08.48.jpeg');">
+        <div class="שירות-טקסט">בדיקת רטיבות ואיתור נזילות</div>
+      </a>
+
+ <a href="דוח-מפוט-לקבלן-.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 12.09.38.jpeg');">
+        <div class="שירות-טקסט">דו״ח ליקויים מפורט לקבלן   </div>
+      </a>
+      
+
     </div>
-    <div class="תמונת-שירות">
-      <a href="בדיקת תשתיות.html"><img src="img/בדיקות-צילום-פנים-צנרת-1-300x300.jpg" alt=""></a>
-      <div class="כיתוב-על-תמונה">בדיקת תשתיות</div>
-    </div>
-    <div class="תמונת-שירות">
-      <a href="בדיקות תרמיות.html"><img src="img/מצלמה-לבדיקת-רטיבות-300x300.jpg" alt=""></a>
-      <div class="כיתוב-על-תמונה">בדיקות תרמיות</div>
-    </div>
-  </div>
 
   <div class="כותרת-אלבום"><h3>בדיקה לדוגמה</h3></div>
 
   <div class="אלבום-תמונות">
-    <img src="img/Bedek Bayit 3.jpeg" alt="">
     <img src="img/Bedek Bayit 1.jpeg" alt="">
     <img src="img/Bedek Bayit 2.jpeg" alt="">
+    <img src="img/Bedek Bayit 3.jpeg" alt="">
     <img src="img/Bedek Bayit 4.jpeg" alt="">
-    <img src="img/Bedek Bayit 5.jpeg" alt="">
-    <img src="img/Bedek Bayit 6.jpeg" alt="">
-    <img src="img/Bedek Bayit 7.jpeg" alt="">
-    <img src="img/Bedek Bayit 8.jpeg" alt="">
   </div>
 
   <footer>
@@ -374,5 +345,7 @@
       menu.classList.toggle("active");
     }
   </script>
+
 </body>
 </html>
+
