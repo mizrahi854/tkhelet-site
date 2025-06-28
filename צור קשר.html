@@ -252,9 +252,47 @@
       padding: 10px 20px;
       font-size: 15px;
     }
+
+#whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;  /* לצד שמאל במקום ימין */
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  border-radius: 50%;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#whatsapp-button:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+#whatsapp-button img {
+  width: 40px;
+  height: 40px;
+  user-select: none;
+  pointer-events: none;
+}
+
+
   </style>
 </head>
 <body>
+
+   <a href="https://wa.me/972508448818" target="_blank"
+  
+     id="whatsapp-button" 
+     title="שלח הודעה בוואטסאפ">
+    <img src="img/WhatsApp.svg" alt="">
+  </a>
 
   <div class="שורה-עליונה">
     <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שתכלת דומה לים וים דומה לרקיע ורקיע דומה לכיסא הכבוד״</div>
@@ -266,7 +304,7 @@
       <a href="index.html">בית</a>
       <a href="אודות.html">אודות</a>
       <a href="שירותים.html">שירותים</a>
-      <a href="המלצות.html">המלצות</a>
+         <a href="ממונה בטיחות.html">ממונה בטיחות</a>
       <a href="צור קשר.html">צור קשר</a>
     </div>
   </div>
