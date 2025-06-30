@@ -1,115 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- ודא שהאתר זמין ב-HTTP ו-HTTPS -->
   <url>
-    <loc>http://badek-bait.co.il/sitemap.xml
-</loc>
+    <loc>http://badek-bait.co.il/</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/index.html</loc>
+    <loc>http://badek-bait.co.il/index.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/articles_page3.html</loc>
+    <loc>http://badek-bait.co.il/articles_page3.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/articles_page1.html</loc>
+    <loc>http://badek-bait.co.il/articles_page1.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article14.html</loc>
+    <loc>http://badek-bait.co.il/article14.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article13.html</loc>
+    <loc>http://badek-bait.co.il/article13.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article12.html</loc>
+    <loc>http://badek-bait.co.il/article12.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article11.html</loc>
+    <loc>http://badek-bait.co.il/article11.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article10.html</loc>
+    <loc>http://badek-bait.co.il/article10.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article9.html</loc>
+    <loc>http://badek-bait.co.il/article9.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article8.html</loc>
+    <loc>http://badek-bait.co.il/article8.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article7.html</loc>
+    <loc>http://badek-bait.co.il/article7.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article6.html</loc>
+    <loc>http://badek-bait.co.il/article6.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article5.html</loc>
+    <loc>http://badek-bait.co.il/article5.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article4.html</loc>
+    <loc>http://badek-bait.co.il/article4.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article3.html</loc>
+    <loc>http://badek-bait.co.il/article3.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article2.html</loc>
+    <loc>http://badek-bait.co.il/article2.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/article1.html</loc>
+    <loc>http://badek-bait.co.il/article1.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/שירותים.html</loc>
+    <loc>http://badek-bait.co.il/שירותים.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/צור קשר.html</loc>
+    <loc>http://badek-bait.co.il/צור קשר.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/ממונה בטיחות.html</loc>
+    <loc>http://badek-bait.co.il/ממונה בטיחות.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/דוח-מפוט-לקבלן.html</loc>
+    <loc>http://badek-bait.co.il/דוח-מפוט-לקבלן.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/ביקורת שיפוץ.html</loc>
+    <loc>http://badek-bait.co.il/ביקורת שיפוץ.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/בדק בית.html</loc>
+    <loc>http://badek-bait.co.il/בדק בית.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/וילה.html</loc>
+    <loc>http://badek-bait.co.il/וילה.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/בדיקה-יד-שניה.html</loc>
+    <loc>http://badek-bait.co.il/בדיקה-יד-שניה.html</loc>
   </url>
 
   <url>
-    <loc>https://badek-bait.co.il/איתור-רטיבות.html</loc>
+    <loc>http://badek-bait.co.il/איתור-רטיבות.html</loc>
   </url>
 
-
+  <url>
+    <loc>http://badek-bait.co.il/איתור-קטיבות.html</loc>
+  </url>
 
 </urlset>
+
