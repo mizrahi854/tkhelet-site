@@ -64,7 +64,36 @@
       color: #0077aa;
       text-decoration: underline;
     }
+ .המבורגר {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
+      user-select: none;
+    }
 
+    @media (max-width: 768px) {
+      .תפריט-ניווט {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 999;
+      }
+
+      .תפריט-ניווט.active {
+        display: flex;
+      }
+
+      .המבורגר {
+        display: block;
+      }
+    }
     .אודות {
       background-image: url('https://www.paztech.co.il/assets/img/aluminium2.jpg');
       background-size: cover;
@@ -259,5 +288,16 @@
     <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
     <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
   </footer>
+
+  <script>
+    // סקריפט למעבר תפריט המבורגר במובייל
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+
 </body>
 </html>
