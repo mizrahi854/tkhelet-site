@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>מאמרים - עמוד 1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #004b91;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    .articles-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) {
+      .articles-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .articles-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .article-box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 340px;
+      overflow: hidden;
+    }
+    .article-title {
+      font-size: 20px;
+      color: #004b91;
+      font-weight: bold;
+      margin-bottom: 15px;
+      flex-shrink: 0;
+    }
+    .article-summary {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.6;
+      overflow-wrap: break-word;
+      white-space: normal;
+      flex-grow: 1;
+    }
+    .read-link {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #004b91;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .read-link:hover {
+      text-decoration: underline;
+    }
+    .pagination {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .pagination a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 16px;
+      color: #004b91;
+      text-decoration: none;
+      border: 1px solid #004b91;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .pagination a:hover {
+      background-color: #004b91;
+      color: white;
+    }
+
+
+  #phone-button {
+    position: fixed;
+    bottom: 90px; /* מעל כפתור הוואטסאפ (שמקומו 20px) */
+    left: 20px;
+    background-color: rgba(0, 95, 136, 0.85); /* כחול תכלת כהה עם שקיפות */
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 1001; /* מעל כפתור הוואטסאפ */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.3s ease;
+  }
+
+  #phone-button:hover {
+    background-color: rgba(0, 95, 136, 1);
+  }
+
+     #whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      z-index: 1000;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      border-radius: 50%;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #whatsapp-button:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    #whatsapp-button img {
+      width: 40px;
+      height: 40px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+        footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: transparent;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 15px;
+    }
+
+    footer p, footer strong {
+      color: rgba(46, 46, 46, 0.7);
+    }
+    footer p:first-child {
+      margin-bottom: 2px;
+    }
+
+        .שורה-עליונה {
+      background-color: #eeeeee;
+      height: 17px;
+      font-size: 12px;
+      color: #0077aa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .שורה-אמצע {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .סרגל-כלים {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 30px;
+      z-index: 1000;
+    }
+
+    .סרגל-כלים img {
+      height: 45px;
+    }
+
+    .תפריט-ניווט {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .תפריט-ניווט a {
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 500;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    .תפריט-ניווט a:hover {
+      color: #0077aa;
+      text-decoration: underline;
+    }
+
+    .המבורגר {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+      .תפריט-ניווט {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 999;
+      }
+
+      .תפריט-ניווט.active {
+        display: flex;
+      }
+
+      .המבורגר {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ <a href="tel:0508448818" id="phone-button" title="לחייג למספר טלפון">
+  📞 050-844-8818
+</a>
+
+ <a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע%20על%20בדק%20בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ">
+  <img src="img/WhatsApp.svg" alt="וואטסאפ">
+</a>
+
+  <div class="שורה-עליונה">
+    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שתכלת דומה ליםוים דומה לרקיע ורקיע דומה לכיסא הכבוד״ </div>
+  </div>
+
+  <div class="סרגל-כלים">
+    <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
+
+    <div class="תפריט-ניווט" id="navMenu">
+      <a href="index.html">בית</a>
+      <a href="אודות.html">אודות</a>
+      <a href="שירותים.html">תחומי הפעילות</a>
+      <a href="ממונה בטיחות.html">ממונה בטיחות</a>
+      <a href="המלצות.html">המלצות</a>
+       <a href="articles_page1.html">מאמרים</a>
+      <a href="שאלות.html">שאלות ותשובות</a>
+      <a href="צור קשר.html">צור קשר</a>
+    </div>
+    <div class="המבורגר" id="menuToggle">&#9776;</div>
+  </div>
+
+  <header>
+    <h1>מאמרים - תכלת הנדסה</h1>
+  </header>
+
+  <div class="articles-container">
+    <article class="article-box">
+      <h3 class="article-title">בדק בית לאחר שיפוץ – מה חשוב לבדוק?</h3>
+      <p class="article-summary">
+        שיפצתם? כדאי לבדוק שהתוצאה עומדת בתקן – לפני שתשלמו או תגלו בעיות.
+        בדיקה יסודית אחרי שיפוץ יכולה לחסוך בעיות עתידיות, לזהות ליקויים ולוודא שהכל נעשה על פי הדרישות.
+      </p>
+      <a href="article7.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">בדק בית בבית פרטי – מה שונה מדירה?</h3>
+      <p class="article-summary">
+        בדק בית בבית פרטי כולל גם גגות, חצר, ניקוזים – ומחייב בדיקה רחבה ומקצועית.
+        ישנם הבדלים רבים בין בדק בית בבית פרטי לבין בדירה – החל מטיפול בגגות ועד מערכות ניקוז מורכבות יותר.
+      </p>
+      <a href="article8.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">מהו בדק בית?</h3>
+      <p class="article-summary">
+        בדק בית מזהה ליקויי בנייה, רטיבות, תשתיות פגומות – ומונע טעויות יקרות.
+        תהליך חיוני לזיהוי בעיות בניה לפני קנייה או שימוש בנכס.
+      </p>
+      <a href="article9.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">מילון מונחים לבדיקות בדק בית</h3>
+      <p class="article-summary">
+        לא מבינים מה זה סדק חי או תקן 1752? המילון שלנו מסביר הכול בפשטות.
+        מונחים טכניים יכולים להיות מסובכים – כאן תמצאו הסברים פשוטים וברורים.
+      </p>
+      <a href="article10.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">איתור נזילות ורטיבויות – למה חשוב לבדוק ואיך זה מתבצע</h3>
+      <p class="article-summary">
+        מצלמה תרמית, מד לחות ובדיקת שיפועים – כך מוצאים רטיבות נסתרת באמת.
+        הבדיקה מאפשרת גילוי מדויק וטיפול נכון בזמן.
+      </p>
+      <a href="article11.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">איך לבחור מהנדס בדק בית?</h3>
+      <p class="article-summary">
+        איך בוחרים מהנדס בדק מוסמך? כללי זהב לבדיקה מקצועית, עם דו"ח משפטי.
+        חשוב לבחור מהנדס עם ניסיון, הסמכה ותיק עבודות מוכח.
+      </p>
+      <a href="article12.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">תהליך בדק הבית – שלב אחר שלב</h3>
+      <p class="article-summary">
+        בדק בית הוא תהליך הנדסי מקצועי שמבוצע בשלבים ברורים – משלב תיאום ועד דו"ח מקצועי מפורט.
+        התהליך כולל בדיקה יסודית של כל אלמנט בבנייה, זיהוי ליקויים פוטנציאליים ומתן המלצות מדויקות לטיפול.
+      </p>
+      <a href="article1.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">בדק בית לדירה מקבלן – למה לא לוותר עליו?</h3>
+      <p class="article-summary">
+        גם דירה חדשה יכולה להכיל ליקויים – לעיתים חמורים – שמגלים רק בבדיקה מקצועית.
+        בדק בית מקיף מבטיח שהדירה עומדת בכל התקנים ושהיא בטוחה למגורים.
+      </p>
+      <a href="article2.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">בדק בית לפני רכישת דירה – כך לא תפסידו כסף</h3>
+      <p class="article-summary">
+        בדק בית מקצועי לפני רכישת דירה מאפשר לגלות ליקויים נסתרות כמו רטיבויות, סדקים ושיפועים לא תקניים.
+        ליקויים אלו עלולים לגרום לנזק כלכלי רב ולפגוע בערך הנכס.
+      </p>
+      <a href="article3.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">מה כוללת בדיקת בדק בית מקצועית?</h3>
+      <p class="article-summary">
+        בדק בית מקצועי כולל סקירה מקיפה של יסודות המבנה, קירות, רצפות ותקרות, מערכות אינסטלציה וחשמל,
+        איתור רטיבות ונזילות באמצעות טכנולוגיות מתקדמות, ובחינת כל המערכות בהתאם לתקן הישראלי.
+      </p>
+      <a href="article4.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">תקופת בדק ואחריות קבלן – כל מה שצריך לדעת</h3>
+      <p class="article-summary">
+        תקופת בדק ואחריות הקבלן מוגדרת בחוק ומסדירה את הזכויות לתיקון ליקויים שנמצאו בנכס לאחר המסירה.
+        הבנת התקופה וחשיבות הדו"ח המקצועי חיונית להגנה על זכויותיך.
+      </p>
+      <a href="article5.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">למה חשוב לקבל דו”ח ליקויים הנדסי כתוב?</h3>
+      <p class="article-summary">
+        דו"ח ליקויים הנדסי מקצועי הוא המסמך המוסמך שמציג את כל הליקויים במבנה, כולל תמונות, הסברים והמלצות לטיפול.
+        הדו"ח חשוב לביטחון משפטי, לתיקונים מושכלים, ומשמש כראיה במקרה של מחלוקות עם הקבלן או בבית המשפט.
+      </p>
+      <a href="article6.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">טעויות נפוצות שאנשים עושים בלי בדק בית</h3>
+      <p class="article-summary">
+        אנשים רבים מוותרים על בדק בית לפני קניית נכס או ביצוע שיפוצים, אך הדבר עלול לעלות להם ביוקר.
+        טעויות נפוצות כוללות חוסר זיהוי ליקויים חמורים, אי גילוי רטיבויות נסתרות, ותקלות במערכות החשמל והאינסטלציה.
+      </p>
+      <a href="article13.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <article class="article-box">
+      <h3 class="article-title">בדק בית לפני חורף – למה לא מחכים לרטיבות הראשונה?</h3>
+      <p class="article-summary">
+        לפני בוא החורף, חשוב לבצע בדק בית יסודי כדי לאתר איטום לקוי או רטיבות סמויה שעלולות להחמיר עם הגשמים.
+        איתור מוקדם מאפשר תיקון מהיר ומונע נזקים כבדים.
+      </p>
+      <a href="article14.html" class="read-link">›› קרא עוד</a>
+    </article>
+
+    <!-- המאמר החדש שהוספת -->
+    <article class="article-box">
+      <h3 class="article-title">אחריות הקבלן בדירה חדשה – כל מה שחשוב לדעת</h3>
+      <p class="article-summary">
+        אחריות הקבלן על דירה חדשה היא קריטית כדי להבטיח שהנכס עומד בתנאי החוזה והתקנים.
+        חשוב להבין מה כוללת תקופת האחריות ואיך לפעול במקרים של ליקויים.
+      </p>
+      <a href="article_new.html" class="read-link">›› קרא עוד</a>
+    </article>
+  </div>
+
+  <div class="pagination">
+    <a href="index.html">« חזרה לעמוד הבית</a>
+  
+  </div>
+    <footer>
+    <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
+    <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
+  </footer>
+
+  <script>
+    // סקריפט למעבר תפריט המבורגר במובייל
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+  
+</body>
+</html>
