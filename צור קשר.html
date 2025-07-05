@@ -33,7 +33,7 @@
       padding: 0 20px;
       user-select: none;
     }
- .סרגל-כלים {
+    .סרגל-כלים {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -326,9 +326,37 @@
   #phone-button:hover {
     background-color: rgba(0, 95, 136, 1);
   }
+
+
+    #whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      z-index: 1000;
+      border-radius: 50%;
+      background-color: transparent;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #whatsapp-button img {
+      width: 40px;
+      height: 40px;
+    }
+
   </style>
 </head>
 <body>
+
+<a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע%20על%20בדק%20בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ">
+  <img src="img/WhatsApp.svg" alt="וואטסאפ">
+</a>
+
+
 <a href="tel:0508448818" id="phone-button" title="לחייג למספר טלפון">
   📞 050-844-8818
 </a>
@@ -369,7 +397,11 @@
     <div class="תיבה-צור-קשר">
       <div id="הודעה">הפרטים נשלחו בהצלחה! ✉️</div>
       <h2>טופס יצירת קשר</h2>
-      <form onsubmit="שלחForm(); return false;" autocomplete="off">
+      <form action="https://formsubmit.co/tkhelet.engineering@gmail.com" method="POST" autocomplete="off">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="פנייה חדשה מהאתר של תכלת הנדסה" />
+        <input type="hidden" name="_next" value="https://tkhelet-engineering.com/thank-you.html" />
+
         <input type="text" name="name" placeholder="*שם מלא" required />
         <input type="tel" name="phone" placeholder="*מספר טלפון" pattern="[\d\s\+\-\(\)]{7,15}" title="אנא הכנס מספר טלפון תקין" required />
         <input type="email" name="email" placeholder="*אימייל" required />
@@ -411,15 +443,13 @@
   </footer>
 
   <script>
-    function שלחForm() {
-      const הודעה = document.getElementById('הודעה');
-      הודעה.style.display = 'block';
-    }
-
     function toggleMenu() {
       const menu = document.getElementById("navMenu");
       menu.classList.toggle("active");
     }
+
+    document.getElementById('menuToggle').addEventListener('click', toggleMenu);
   </script>
 </body>
 </html>
+
