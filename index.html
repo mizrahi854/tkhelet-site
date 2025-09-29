@@ -972,6 +972,34 @@ header {
   }
 }
 
+/* תיקון תפריט המבורגר במובייל */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;          /* רוחב התפריט בצד ימין */
+    height: 100vh;       /* גובה מלא של המסך */
+    background: #fff;    /* רקע לבן ברור */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 20px;  /* מרווח מתחת ללוגו/כותרת */
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+    transform: translateX(100%); /* מוסתר כברירת מחדל */
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;        /* לוודא שהוא מעל התוכן */
+  }
+
+  .nav-links.active {
+    transform: translateX(0); /* נפתח בלחיצה */
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+}
+
+    
   </style>
 </head>
 <body>
