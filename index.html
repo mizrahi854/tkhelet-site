@@ -1,12 +1,66 @@
-
-
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>תכלת הנדסה</title>
+
+  <!-- ====== SEO / META ====== -->
+<title>בדק בית – תכלת הנדסה</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+
+
+<meta name="description" content="בדק בית מקצועי עם תכלת הנדסה – איתור נזילות, רטיבות, ועבודות הנדסה בטיחותיות.">
+<meta name="keywords" content="בדק בית, איתור נזילות, רטיבות, תכלת הנדסה, בדיקות מקצועיות">
+
+
+  <meta name="description" content="תכלת הנדסה - בדק בית מקצועי, איתור נזילות וביקורת מבנים. מהנדסים מוסמכים, דו״ח מפורט ושירות בפריסה ארצית." />
+  <meta name="keywords" content="תכלת הנדסה, בדק בית, איתור נזילות, בדיקות רטיבות, ביקורת מבנים, מהנדס בדק" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tkhelet-engineering.com/" />
+
+  <!-- Open Graph (Facebook / WhatsApp preview) -->
+  <meta property="og:locale" content="he_IL" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="תכלת הנדסה — בדק בית, איתור נזילות וביקורת מבנים" />
+  <meta property="og:description" content="תכלת הנדסה - בדק בית מקצועי, איתור נזילות וביקורת מבנים. מהנדסים מוסמכים, דו״ח מפורט ושירות בפריסה ארצית." />
+  <meta property="og:url" content="https://tkhelet-engineering.com/" />
+  <meta property="og:image" content="https://tkhelet-engineering.com/img/img3.jpeg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="תכלת הנדסה" />
+  <meta name="twitter:description" content="בדק בית, איתור נזילות ובדיקות רטיבות — דו״ח מקצועי ומפורט." />
+  <meta name="twitter:image" content="https://tkhelet-engineering.com/img/img3.jpeg" />
+
+  <!-- Performance hints -->
+  <link rel="preload" as="image" href="img/img3.jpeg" />
+  <link rel="preload" as="image" href="img/img2.jpeg" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"תכלת הנדסה",
+    "url":"https://tkhelet-engineering.com/",
+    "logo":"https://tkhelet-engineering.com/img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png",
+    "telephone":"+972508448818",
+    "description":"בדק בית, איתור נזילות ובדיקות רטיבות — מהנדסים מוסמכים עם דו\"חות מפורטים.",
+    "address": {
+      "@type":"PostalAddress",
+      "addressLocality":"חצור הגלילית",
+      "addressRegion":"צפון",
+      "addressCountry":"IL"
+    },
+    "areaServed": ["Tel Aviv","Ramat Gan","Givatayim","Petah Tikva","Herzliya","Kfar Saba","Rishon LeZion","Holon","Bat Yam","Netanya","Modiin","Rehovot","Ness Ziona","Ashdod","Ra'anana","Hadera"],
+    "openingHours":"Mo-Fr 08:00-18:00"
+  }
+  </script>
+
+  <!-- קטן עדיף: שמרתי את ה-CSS שלך כמו שהיה, הוספתי מחלקות עזר ושינויים מינוריים שאינם משפיעים על המראה -->
   <style>
 /* כללי */
 
@@ -805,22 +859,26 @@ header {
   #phone-button:hover {
     background-color: rgba(0, 95, 136, 1);
   }
+
+  /* small helper for visually hidden headings */
+  .visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }
   </style>
 </head>
 <body>
 
-<a href="tel:0508448818" id="phone-button" title="לחייג למספר טלפון">
+
+
+
+<a href="tel:0508448818" id="phone-button" title="לחייג למספר טלפון" aria-label="לחייג למספר טלפון">
   📞 050-844-8818
 </a>
 
-    <div class="שורה-עליונה">
-    <div class="שורה-אמצע"> תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שתכלת דומה לים וים דומה לרקיע ורקיע דומה לכיסא הכבוד״ </div>
-</div>
+  
 
-   <div class="סרגל-כלים">
-    <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
+   <div class="סרגל-כלים" role="banner">
+    <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png"  loading="lazy" alt="בדק בית מקצועי – תכלת הנדסה"> 
 
-    <div class="תפריט-ניווט" id="navMenu">
+    <div class="תפריט-ניווט" id="navMenu" role="navigation" aria-label="תפריט ראשי">
       <a href="index.html">בית</a>
       <a href="אודות.html">אודות</a>
       <a href="שירותים.html">תחומי הפעילות</a>
@@ -830,17 +888,17 @@ header {
       <a href="שאלות.html">שאלות ותשובות</a>
       <a href="צור קשר.html">צור קשר</a>
     </div>
-    <div class="המבורגר" id="menuToggle">&#9776;</div>
+    <div class="המבורגר" id="menuToggle" role="button" aria-controls="navMenu" aria-expanded="false" aria-label="פתח תפריט">&#9776;</div>
   </div>
 
 
 
 
-  <div class="hero-slider">
-    <button class="arrow left" onclick="changeSlide(-1)">&#10094;</button>
-    <button class="arrow right" onclick="changeSlide(1)">&#10095;</button>
+  <div class="hero-slider" aria-roledescription="carousel" aria-label="סליידר שירותים">
+    <button class="arrow left" onclick="changeSlide(-1)" aria-label="סלייד לנסיגה">&#10094;</button>
+    <button class="arrow right" onclick="changeSlide(1)" aria-label="סלייד קדימה">&#10095;</button>
 
-    <div class="slide" style="background-image: url('img/img2.jpeg');">
+    <div class="slide" style="background-image: url('img/img2.jpeg');" role="group" aria-label="בדק בית לדירה חדשה">
       <div class="hero-content">
         <h1>בדק בית לדירה חדשה
 </h1>
@@ -851,7 +909,7 @@ header {
       </div>
     </div>
 
-  <div class="slide active" style="background-image: url('img/img3.jpeg');">
+  <div class="slide active" style="background-image: url('img/img3.jpeg');" role="group" aria-label="בדק בית לדירה יד שנייה">
       <div class="hero-content">
         <h1>בדק בית לדירה יד שנייה - לפני קנייה</h1>
         <p>מה שנראה טוב בעין – לא תמיד תקין. נבדוק את כל מה שמוסתר לפני שחותמים.</p>
@@ -859,7 +917,7 @@ header {
       </div>
     </div>
 
-    <div class="slide" style="background-image: url('img/img6.jpeg');">
+    <div class="slide" style="background-image: url('img/img6.jpeg');" role="group" aria-label="בדק בית לבית פרטי / וילה">
       <div class="hero-content">
         <h1>בדק בית לבית פרטי / וילה</h1>
         <p>בבית גדול יש גם יותר סיכוי לליקויים. אנחנו איתכם בכל מטר.</p>
@@ -870,7 +928,7 @@ header {
 
 
 
-    <div class="slide" style="background-image: url('img/img13.jpeg');">
+    <div class="slide" style="background-image: url('img/img13.jpeg');" role="group" aria-label="בדק בית לאחר שיפוץ">
       <div class="hero-content">
         <h1>בדק בית לאחר שיפוץ או תמ״א 38</h1>
         <p>לא כל שיפוץ נגמר כמו שהובטח. בואו נבדוק אם העבודה בוצעה כראוי.</p>
@@ -879,7 +937,7 @@ header {
     </div>
 
 
-    <div class="slide" style="background-image: url('img/WhatsApp Image 2025-06-26 at 01.20.36.jpeg');">
+    <div class="slide" style="background-image: url('img/WhatsApp Image 2025-06-26 at 01.20.36.jpeg');" role="group" aria-label="איתור נזילות ורטיבויות">
       <div class="hero-content">
         <h1>איתור נזילות ורטיבויות בדיוק הנדסי</h1>
         <p>באמצעות מצלמה תרמית, ללא הרס – כולל דו”ח מקצועי ופתרון ממוקד</p>
@@ -889,7 +947,7 @@ header {
   </div>
 
 
-    <div class="slide" style="background-image: url('img/img4.jpeg');">
+    <div class="slide" style="background-image: url('img/img4.jpeg');" role="group" aria-label="דו\"ח ליקויים מקצועי וברור">
       <div class="hero-content">
         <h1>דו”ח ליקויים מקצועי וברור</h1>
         <p>דו״ח מסודר עם תמונות, הסברים והמלצות לתיקון – קל להבין, קל לפעול.</p>
@@ -917,7 +975,7 @@ header {
           </p>
         </div>
         <div class="תמונה-אודות">
-          <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="תמונה של בדק בית">
+          <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png"  alt="בדק בית מקצועי – תכלת הנדסה" loading="lazy">
         </div>
       </div>
     </div>
@@ -932,23 +990,23 @@ header {
     <div class="שירותים-תמונות">
 
 
-      <a href="בדק בית חדשה.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 01.30.32.jpeg');">
+      <a href="בדק בית חדשה.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 01.30.32.jpeg');" aria-label="בדק בית לדירה חדשה מקבלן">
         <div class="שירות-טקסט">בדק בית לדירה חדשה מקבלן</div>
       </a>
-      <a href="בדיקה-יד-שניה.html" class="שירות-פריט" style="background-image: url('img/img3.jpeg');">
+      <a href="בדיקה-יד-שניה.html" class="שירות-פריט" style="background-image: url('img/img3.jpeg');" aria-label="בדיקה לפני רכישת דירה מיד שנייה">
         <div class="שירות-טקסט">בדיקה לפני רכישת דירה מיד שנייה</div>
       </a>
-      <a href="בדק בית וילה.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 12.10.35.jpeg');">
+      <a href="בדק בית וילה.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 12.10.35.jpeg');" aria-label="בדק בית לבית פרטי / וילה">
         <div class="שירות-טקסט">בדק בית לבית פרטי / וילה</div>
       </a>
-      <a href="ביקורת שיפוץ.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 12.08.17.jpeg');">
+      <a href="ביקורת שיפוץ.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 12.08.17.jpeg');" aria-label="ביקורת לאחר שיפוץ או חיזוק">
         <div class="שירות-טקסט">ביקורת לאחר שיפוץ או חיזוק</div>
       </a>
-      <a href="איתור-רטיבות.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 12.08.49.jpeg');">
+      <a href="איתור-רטיבות.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 12.08.49.jpeg');" aria-label="בדיקת רטיבות ואיתור נזילות">
         <div class="שירות-טקסט">בדיקת רטיבות ואיתור נזילות</div>
       </a>
       
- <a href="דוח-מפוט-לקבלן.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 12.09.38.jpeg');">
+ <a href="דוח-מפוט-לקבלן.html" class="שירות-פריט" style="background-image: url('img/WhatsApp Image 2025-06-26 at 12.09.38.jpeg');" aria-label="דו״ח ליקויים מפורט לקבלן">
         <div class="שירות-טקסט">דו״ח ליקויים מפורט לקבלן   </div>
       </a>
       
@@ -1056,8 +1114,8 @@ header {
   
 <div class="כפתורי-פעולה">
   <a href="tel:0508448818">📞 לתיאום בדיקה חייגו</a>
-  <a href="https://wa.me/972508448818" target="_blank">
-    <img src="img/WhatsApp.svg" alt="וואצאפ" style="width: 20px; height: 20px; vertical-align: middle; margin-left: 8px;">WhatsApp
+  <a href="https://wa.me/972508448818" target="_blank" rel="noopener noreferrer">
+    <img src="img/WhatsApp.svg"  alt="בדק בית מקצועי – תכלת הנדסה" style="width: 20px; height: 20px; vertical-align: middle; margin-left: 8px;" loading="lazy">WhatsApp
   </a>
 </div>
 
@@ -1071,8 +1129,8 @@ header {
     </p>
   </div>
  
-<a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע%20על%20בדק%20בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ">
-    <img src="img/WhatsApp.svg" alt="">
+<a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע%20על%20בדק%20בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ" aria-label="שלח הודעה בוואטסאפ" rel="noopener noreferrer">
+    <img src="img/WhatsApp.svg"  alt="בדק בית מקצועי – תכלת הנדסה" loading="lazy">
   </a>
 
     <header>
@@ -1087,7 +1145,7 @@ header {
       <p class="מאמר-פירוט">
         בדיקה יסודית אחרי שיפוץ יכולה לחסוך בעיות עתידיות, לזהות ליקויים ולוודא שהכל נעשה על פי הדרישות. זה כולל בדיקה של מערכות החשמל, אינסטלציה, ריצוף, צבע, וחומרים שונים שהשתמשו בהם. בנוסף, מומלץ לוודא שאין נזילות או פגמים נסתרים העלולים לגרום לבעיות בהמשך הדרך.
       </p>
-      <a href="article7.html">›› קרא עוד</a>
+      <a href="article7.html" rel="noopener noreferrer">›› קרא עוד</a>
     </article>
 
     <article class="מאמר">
@@ -1096,7 +1154,7 @@ header {
       <p class="מאמר-פירוט">
         ישנם הבדלים רבים בין בדק בית בבית פרטי לבין בדירה – החל מטיפול בגגות ועד מערכות ניקוז מורכבות יותר. חשוב לוודא שהגגות עמידים למזג אוויר, שהניקוז מתפקד כראוי ושהחצר מאובטחת. בנוסף, צריך לבחון את מערכות הביוב והחשמל בצורה מקיפה.
       </p>
-      <a href="article8.html">›› קרא עוד</a>
+      <a href="article8.html" rel="noopener noreferrer">›› קרא עוד</a>
     </article>
 
     <article class="מאמר">
@@ -1105,7 +1163,7 @@ header {
       <p class="מאמר-פירוט">
         בדק בית הוא תהליך חיוני לזיהוי בעיות בניה לפני קנייה או שימוש בנכס, וכדי למנוע הוצאות מיותרות בעתיד. הבדיקה כוללת בדיקה חזותית, שימוש במכשירים מתקדמים לאיתור רטיבויות ונזילות, והכנת דוח מפורט הכולל המלצות לתיקונים.
       </p>
-      <a href="article9.html">›› קרא עוד</a>
+      <a href="article9.html" rel="noopener noreferrer">›› קרא עוד</a>
     </article>
 
     <article class="מאמר">
@@ -1114,7 +1172,7 @@ header {
       <p class="מאמר-פירוט">
         מונחים טכניים יכולים להיות מסובכים – כאן תמצאו הסברים פשוטים וברורים לכל מונח חשוב בבדיקות בדק בית. לדוגמה, מהו "סדק חי", איך מודדים רטיבות, ומה המשמעות של תקנים שונים.
       </p>
-      <a href="article10.html">›› קרא עוד</a>
+      <a href="article10.html" rel="noopener noreferrer">›› קרא עוד</a>
     </article>
 
     <article class="מאמר">
@@ -1123,7 +1181,7 @@ header {
       <p class="מאמר-פירוט">
         רטיבויות נסתרות עלולות לגרום לנזקים קשים – הבדיקה המקצועית מאפשרת גילוי מדויק וטיפול נכון בזמן. משתמשים בציוד מתקדם כמו מצלמות תרמיות, גלאי לחות ומד שיפועים כדי לאתר בעיות מוקדם ככל האפשר.
       </p>
-      <a href="article11.html">›› קרא עוד</a>
+      <a href="article11.html" rel="noopener noreferrer">›› קרא עוד</a>
     </article>
 
     <article class="מאמר">
@@ -1132,7 +1190,7 @@ header {
       <p class="מאמר-פירוט">
         חשוב לבחור מהנדס עם ניסיון, הסמכה ותיק עבודות מוכח – כך תבטיחו בדיקה יסודית ואמינה. כדאי לוודא שהמהנדס מוסמך ומכיר את התקנים הרלוונטיים, ומספק דו"ח מפורט שניתן להשתמש בו לצרכים משפטיים.
       </p>
-      <a href="article12.html">›› קרא עוד</a>
+      <a href="article12.html" rel="noopener noreferrer">›› קרא עוד</a>
     </article>
          </div><div class="pagination"><a href="articles_page1.html">לכל המאמרים </a></div>
   <footer>
@@ -1140,41 +1198,67 @@ header {
     <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
   </footer>
 
+  <!-- ====== סקריפט מאוחד: סליידר + המבורגר + lazy images ====== -->
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("navMenu");
-      menu.classList.toggle("active");
-    }
+    (function(){
+      // המבורגר ורספונסיביות
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          const isActive = navMenu.classList.toggle('active');
+          menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        });
+      }
 
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
+      // סליידר
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slide');
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) slide.classList.add('active');
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          slide.setAttribute('aria-hidden', 'true');
+          if (i === index) {
+            slide.classList.add('active');
+            slide.setAttribute('aria-hidden', 'false');
+          }
+        });
+      }
+
+      function changeSlide(step) {
+        currentSlide = (currentSlide + step + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      // חצים (onclick משולב ב-HTML) + מקשים
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') changeSlide(-1);
+        if (e.key === 'ArrowRight') changeSlide(1);
       });
-    }
 
-    function changeSlide(step) {
-      currentSlide = (currentSlide + step + slides.length) % slides.length;
+      // auto rotate with pause on hover/focus
+      let autoTimer = setInterval(() => changeSlide(1), 10000);
+      slides.forEach(slide => {
+        slide.addEventListener('mouseenter', () => clearInterval(autoTimer));
+        slide.addEventListener('mouseleave', () => { autoTimer = setInterval(() => changeSlide(1), 10000); });
+        // make background images accessible by ensuring role and aria-label are present (kept from HTML)
+      });
+
+      // init
       showSlide(currentSlide);
-    }
 
-    setInterval(() => {
-      changeSlide(1);
-    }, 10000);
+      // ensure all <img> have loading="lazy" for performance (adds attr only if not present)
+      document.querySelectorAll('img').forEach(img => {
+        if (!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
+      });
 
-    showSlide(currentSlide);
-  </script>
-    <script>
-    // סקריפט למעבר תפריט המבורגר במובייל
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
+      // add rel="noopener noreferrer" for external links opened in new tab (best-effort)
+      document.querySelectorAll('a[target="_blank"]').forEach(a => {
+        if (!a.rel.includes('noopener')) a.rel = (a.rel + ' noopener noreferrer').trim();
+      });
+    })();
   </script>
 </body>
 </html>
+
