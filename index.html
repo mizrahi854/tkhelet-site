@@ -957,6 +957,21 @@ header {
 
   /* small helper for visually hidden headings */
   .visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }
+
+
+  /* התאמה לתחומי הפעילות במסכים קטנים */
+@media (max-width: 768px) {
+  .שירותים-תמונות {
+    grid-template-columns: repeat(2, 1fr); /* שתי עמודות במובייל */
+    gap: 15px;
+  }
+
+  .שירות-פריט {
+    width: 100%;   /* יתאים את עצמו לעמודה */
+    height: 160px; /* קצת קטן יותר כדי שיתאים */
+  }
+}
+
   </style>
 </head>
 <body>
@@ -1354,11 +1369,15 @@ header {
       });
     })();
 
-      const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('nav-menu');
+ 
 
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+
+    const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
   });
   </script>
 </body>
