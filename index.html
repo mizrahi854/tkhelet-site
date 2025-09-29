@@ -64,6 +64,45 @@
   <style>
 /* כללי */
 
+
+/* Dropdown כללי */
+.dropdown {
+  display: grid; /* נשתמש ב-grid */
+  grid-template-columns: repeat(3, 1fr); /* 3 תחומים בשורה במחשב */
+  gap: 10px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #0070c0;
+  padding: 10px;
+  width: auto; /* לא מוגבל */
+}
+
+/* תחום בודד */
+.dropdown li {
+  padding: 10px;
+  background: #0090e0;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* שינוי למובייל – 1 תחת השני */
+@media (max-width: 768px) {
+  .dropdown {
+    display: grid;
+    grid-template-columns: 1fr !important; /* 1 עמודה */
+    position: relative; /* יחסית כדי לא להיות מחוץ ל-flow */
+    width: 100%; /* יתפוס את כל הרוחב */
+  }
+
+  .dropdown li {
+    width: 100%; /* כל תחום יתפוס את כל הרוחב */
+    margin-bottom: 10px; /* רווח בין תחומים */
+  }
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -71,6 +110,62 @@ body {
   direction: rtl;
   background-color: #f4f4f4;
 }
+
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* סגנון להמבורגר */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+
+  /* סגנון התפריט */
+  nav {
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  nav ul li {
+    cursor: pointer;
+  }
+
+  /* תפריט נייד */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+
+    nav ul {
+      flex-direction: column;
+      display: none;
+    }
+
+    nav ul.active {
+      display: flex;
+    }
+  }
 
  .המבורגר {
       display: none;
@@ -1258,6 +1353,13 @@ header {
         if (!a.rel.includes('noopener')) a.rel = (a.rel + ' noopener noreferrer').trim();
       });
     })();
+
+      const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
   </script>
 </body>
 </html>
