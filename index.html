@@ -1028,7 +1028,90 @@ header {
   text-decoration: none;
 }
 
-    
+
+    .סרגל-כלים {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .סרגל-כלים img {
+      height: 45px;
+    }
+
+    .תפריט-ניווט {
+      display: flex;
+      gap: 1.5rem;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .תפריט-ניווט a {
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 500;
+      color: #333;
+      white-space: nowrap;
+    }
+
+    .תפריט-ניווט a:hover {
+      color: #0077aa;
+      text-decoration: underline;
+    }
+
+    .המבורגר {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+      .תפריט-ניווט {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 999;
+      }
+
+      .תפריט-ניווט a {
+        font-size: 18px;
+        padding: 10px 0;
+        text-align: right;
+      }
+
+      .תפריט-ניווט.active {
+        display: flex;
+      }
+
+      .המבורגר {
+        display: block;
+      }
+
+      .בלוק-טקסט-ותמונה {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .בלוק-טקסט-ותמונה img {
+        margin-bottom: 1rem;
+      }
+    }
+
+
   </style>
 </head>
 <body>
@@ -1439,3 +1522,4 @@ header {
   </script>
 </body>
 </html>
+
