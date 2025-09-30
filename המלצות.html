@@ -343,6 +343,89 @@
   #phone-button:hover {
     background-color: rgba(0, 95, 136, 1);
   }
+
+
+  
+.המבורגר {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1001;
+  user-select: none;
+}
+
+/* תפריט נגישות במובייל */
+@media (max-width: 768px) {
+  .תפריט-ניווט {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .תפריט-ניווט.active {
+    display: flex;
+  }
+
+  .המבורגר {
+    display: block;
+  }
+}
+
+/* סרגל כלים לבן */
+.סרגל-כלים {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background-color: #ffffff; /* לבן מלא */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* המבורגר - שלושה פסים שחורים */
+.המבורגר {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1001;
+  user-select: none;
+  color: #000000; /* שחור */
+}
+
+/* תפריט נגישות במובייל */
+@media (max-width: 768px) {
+  .תפריט-ניווט {
+    display: none;
+    flex-direction: column;
+    background: #ffffff; /* לבן מלא */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+
+  .תפריט-ניווט.active {
+    display: flex;
+  }
+
+  .המבורגר {
+    display: block;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -355,14 +438,9 @@
   <img src="img/WhatsApp.svg" alt="וואטסאפ" />
 </a>
 
-<div class="שורה-עליונה">
-  <div class="שורה-אמצע">
-    תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שתכלת דומה לים וים דומה לרקיע ורקיע דומה לכיסא הכבוד״
-  </div>
-</div>
   <div class="סרגל-כלים">
     <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
-   
+
     <div class="תפריט-ניווט" id="navMenu">
       <a href="index.html">בית</a>
       <a href="אודות.html">אודות</a>
@@ -375,8 +453,7 @@
     </div>
     <div class="המבורגר" id="menuToggle">&#9776;</div>
   </div>
-  <div class="המבורגר" id="menuToggle">&#9776;</div>
-</div>
+
 
 <div class="כותרת-פתיחה">
 המלצות מלקוחות
@@ -504,3 +581,4 @@
 
 </body>
 </html>
+
