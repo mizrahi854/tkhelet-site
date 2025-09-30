@@ -117,6 +117,86 @@ body {
     font-family: Arial, sans-serif;
   }
 
+  /* סגנון להמבורגר */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+
+  /* סגנון התפריט */
+  nav {
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  nav ul li {
+    cursor: pointer;
+  }
+
+  /* תפריט נייד */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+
+    nav ul {
+      flex-direction: column;
+      display: none;
+    }
+
+    nav ul.active {
+      display: flex;
+    }
+  }
+
+ .המבורגר {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+      .תפריט-ניווט {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 999;
+      }
+
+      .תפריט-ניווט.active {
+        display: flex;
+      }
+
+      .המבורגר {
+        display: block;
+      }
+    }
 /* שורה עליונה */
 
 .שורה-עליונה {
@@ -137,6 +217,78 @@ body {
   white-space: nowrap;
 }
 
+/* סרגל כלים */
+
+.סרגל-כלים {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 30px;
+  z-index: 1000;
+}
+
+.סרגל-כלים img {
+  height: 45px;
+}
+
+/* תפריט ניווט */
+
+.תפריט-ניווט {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex: 1;
+}
+
+.תפריט-ניווט a {
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  color: #333;
+  transition: 0.3s;
+}
+
+.תפריט-ניווט a:hover {
+  color: #0077aa;
+  text-decoration: underline;
+}
+
+/* המבורגר */
+
+.המבורגר {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .תפריט-ניווט {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .תפריט-ניווט.active {
+    display: flex;
+  }
+
+  .המבורגר {
+    display: block;
+  }
+}
 
 /* סליידר - הירו */
 
@@ -826,7 +978,7 @@ header {
     position: fixed;
     top: 0;
     right: 0;
-    width: 75%;          /* רוחב התפריט בצד ימין */
+         /* רוחב התפריט בצד ימין */
     height: 100vh;       /* גובה מלא של המסך */
     background: #fff;    /* רקע לבן ברור */
     flex-direction: column;
@@ -875,8 +1027,6 @@ header {
   color: black;
   text-decoration: none;
 }
-
-
 
 
   </style>
@@ -1289,4 +1439,3 @@ header {
   </script>
 </body>
 </html>
-
