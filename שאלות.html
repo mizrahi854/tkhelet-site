@@ -232,7 +232,64 @@
     background-color: rgba(0, 95, 136, 1);
   }
 
-  
+  /* המבורגר */
+.המבורגר {
+  display: none; /* יופיע רק במובייל */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.המבורגר span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #333; /* צבע הפסים */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* מצב פתוח - הופך ל-X */
+.המבורגר.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.המבורגר.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.המבורגר.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* הצגת המבורגר במובייל */
+@media (max-width: 768px) {
+  .המבורגר {
+    display: flex;
+  }
+
+  .תפריט-ניווט {
+    display: none; /* סגור כברירת מחדל */
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .תפריט-ניווט.active {
+    display: flex; /* נפתח בלחיצה */
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -245,9 +302,7 @@
   <img src="img/WhatsApp.svg" alt="וואטסאפ">
 </a>
 
-<div class="שורה-עליונה">
-  <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שתכלת דומה לים וים דומה לרקיע ורקיע דומה לכיסא הכבוד״</div>
-</div>
+
 
   <div class="סרגל-כלים">
     <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
@@ -339,3 +394,4 @@
 </script>
 </body>
 </html>
+
