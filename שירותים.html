@@ -380,6 +380,49 @@ li {
   #phone-button:hover {
     background-color: rgba(0, 95, 136, 1);
   }
+
+  /* ======================
+     שדרוגים קטנים שביקשת (להוסיף בסוף ה-CSS)
+     - במובייל: 2 עמודות לתמונות השירותים
+     - תיקון תצוגת התפריט המבורגר (לא יחתוך טקסט של הסרגל/תפריט)
+     ====================== */
+
+  @media (max-width: 768px) {
+    /* שתי תמונות בשורה במובייל (כפי שביקשת) */
+    .שירותים-תמונות {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* תפריט המבורגר - כשהוא פעיל יוצג כחלונית גלילה מתחת לסרגל */
+    .תפריט-ניווט {
+      /* נעשה fixed מתחת לסרגל כדי שלא ייחתך חלק מהטקסט של הסרגל */
+      position: fixed;
+      top: 70px; /* מתאים לגובה הסרגל-כלים שלך */
+      right: 0;
+      left: 0;
+      height: calc(100% - 70px);
+      overflow: auto;
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      z-index: 999;
+    }
+
+    .תפריט-ניווט.active {
+      display: flex;
+    }
+
+    /* שיפור קריאות הקישורים במובייל */
+    .תפריט-ניווט a {
+      padding: 12px 0;
+      font-size: 18px;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      color: #222;
+    }
+  }
+
   </style>
 </head>
 <body>
@@ -409,7 +452,7 @@ li {
       <a href="שאלות.html">שאלות ותשובות</a>
       <a href="צור קשר.html">צור קשר</a>
     </div>
-    <div class="המבורגר" id="menuToggle">&#9776;</div>
+    <div class="המבורגר" id="menuToggle" aria-controls="navMenu" aria-expanded="false">&#9776;</div>
   </div>
 
   <section class="hero">
@@ -492,19 +535,31 @@ li {
   </a>
 </div>
   <footer>
-    <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
+    <p><strong>כל הזכויות שמורות ©️ תכלת-הנדסה</strong></p>
     <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
   </footer>
 
   <script>
-    // סקריפט למעבר תפריט המבורגר במובייל
+    // סקריפט למעבר תפריט המבורגר במובייל (כמו שהיה אצלך + עדכון aria-expanded)
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isActive = navMenu.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      });
 
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
+      // סגור התפריט אם לוחצים מחוץ אליו (מובייל) — שמרתי זה כ'נוחות' בלבד, אם לא תרצה אפשר להסיר
+      document.addEventListener('click', (e) => {
+        const target = e.target;
+        if (navMenu.classList.contains('active')) {
+          if (!navMenu.contains(target) && !menuToggle.contains(target)) {
+            navMenu.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded','false');
+          }
+        }
+      });
+    }
   </script>
-  
 </body>
 </html>
