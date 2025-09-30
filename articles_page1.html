@@ -243,6 +243,123 @@
         display: block;
       }
     }
+    /* איפוס בסיסי */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* קישור ללא קו תחתון */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* תמונות וגודל רספונסיבי */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* סגנון כפתור המבורגר פעיל */
+.המבורגר.active div:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.המבורגר.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.המבורגר.active div:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* איפוס overflow במצב פתוח של התפריט במובייל */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* התאמה נוספת למובייל */
+@media (max-width: 480px) {
+  .סרגל-כלים {
+    padding: 0.5rem 1rem;
+  }
+
+  .תפריט-ניווט a {
+    font-size: 16px;
+    padding: 8px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
+/* איפוס בסיסי */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* קישור ללא קו תחתון */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* תמונות וגודל רספונסיבי */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* סגנון כפתור המבורגר פעיל */
+.המבורגר.active div:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.המבורגר.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.המבורגר.active div:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* איפוס overflow במצב פתוח של התפריט במובייל */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* התאמה נוספת למובייל */
+@media (max-width: 480px) {
+  .סרגל-כלים {
+    padding: 0.5rem 1rem;
+  }
+
+  .תפריט-ניווט a {
+    font-size: 16px;
+    padding: 8px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -255,9 +372,7 @@
   <img src="img/WhatsApp.svg" alt="וואטסאפ">
 </a>
 
-  <div class="שורה-עליונה">
-    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שתכלת דומה ליםוים דומה לרקיע ורקיע דומה לכיסא הכבוד״ </div>
-  </div>
+
 
   <div class="סרגל-כלים">
     <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
@@ -438,3 +553,4 @@
   
 </body>
 </html>
+
