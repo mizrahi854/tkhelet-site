@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ֿ;<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -384,15 +384,72 @@
     #phone-button:hover {
       background-color: rgba(0, 95, 136, 1);
     }
+
+    /* איפוס בסיסי */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* קישור ללא קו תחתון */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* תמונות וגודל רספונסיבי */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* סגנון כפתור המבורגר פעיל */
+.המבורגר.active div:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.המבורגר.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.המבורגר.active div:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* איפוס overflow במצב פתוח של התפריט במובייל */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* התאמה נוספת למובייל */
+@media (max-width: 480px) {
+  .סרגל-כלים {
+    padding: 0.5rem 1rem;
+  }
+
+  .תפריט-ניווט a {
+    font-size: 16px;
+    padding: 8px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
   </style>
 </head>
 <body>
 <a href="tel:0508448818" id="phone-button" title="לחייג למספר טלפון">
   📞 050-844-8818
 </a>
-  <div class="שורה-עליונה">
-    <div class="שורה-אמצע">תכלת הנדסה - ״היה רבי מאיר אומר מה נשתנה תכלת מכל מיני צבעונין מפני שתכלת דומה לים וים דומה לרקיע ורקיע דומה לכיסא הכבוד״</div>
-  </div>
+
 
   <a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע%20על%20בדק%20בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ">
     <img src="img/WhatsApp.svg" alt="">
@@ -514,3 +571,4 @@
   </script>
 </body>
 </html>
+
