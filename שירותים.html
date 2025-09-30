@@ -423,6 +423,50 @@ li {
     }
   }
 
+
+@media (max-width: 768px) {
+  /* המבורגר מופיע */
+  .המבורגר {
+    display: block;
+  }
+
+  /* סתרנו את תפריט הניווט כברירת מחדל */
+  .תפריט-ניווט {
+    display: none;
+    flex-direction: column;
+    position: fixed; /* fixed כדי להופיע מעל התוכן */
+    top: 70px; /* מתחת לסרגל-כלים */
+    left: 0;
+    right: 0;
+    height: calc(100% - 70px); /* כל הגובה הפנוי */
+    overflow-y: auto; /* גלילה אם יש הרבה קישורים */
+    background-color: #fff;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    z-index: 9999; /* מעל הכל */
+  }
+
+  .תפריט-ניווט.active {
+    display: flex;
+  }
+
+  /* שיפור קריאות הקישורים במובייל */
+  .תפריט-ניווט a {
+    padding: 15px 0;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    color: #222;
+    text-align: center;
+  }
+
+  /* שתיים תמונות בשורה במובייל */
+  .שירותים-תמונות {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+
   </style>
 </head>
 <body>
