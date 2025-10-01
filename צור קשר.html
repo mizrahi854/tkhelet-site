@@ -3,7 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>צור קשר - תכלת הנדסה</title>
+  <title>צור קשר עם תכלת הנדסה - בדק בית וביקורת בנייה מקצועית</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="צור קשר עם תכלת הנדסה לקבלת בדק בית וביקורת בנייה מקצועית. שירות הנדסי אמין ומדויק עם ליווי אישי מהשיחה הראשונה ועד הדו”ח הסופי." />
+  <meta name="keywords" content="תכלת הנדסה, בדק בית, ביקורת בנייה, הנדסה, ליקויי בנייה, שירות הנדסי, יצירת קשר" />
+  <meta name="author" content="תכלת הנדסה" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph for social media -->
+  <meta property="og:title" content="צור קשר עם תכלת הנדסה - בדק בית וביקורת בנייה מקצועית" />
+  <meta property="og:description" content="צור קשר עם תכלת הנדסה לקבלת בדק בית וביקורת בנייה מקצועית. שירות הנדסי אמין ומדויק עם ליווי אישי מהשיחה הראשונה ועד הדו”ח הסופי." />
+  <meta property="og:image" content="https://tkhelet-engineering.com/img/pexels-ivan-samkov-8962799.jpg" />
+  <meta property="og:url" content="https://tkhelet-engineering.com/צור%20קשר.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="צור קשר עם תכלת הנדסה - בדק בית וביקורת בנייה מקצועית" />
+  <meta name="twitter:description" content="צור קשר עם תכלת הנדסה לקבלת בדק בית וביקורת בנייה מקצועית. שירות הנדסי אמין ומדויק עם ליווי אישי מהשיחה הראשונה ועד הדו”ח הסופי." />
+  <meta name="twitter:image" content="https://tkhelet-engineering.com/img/pexels-ivan-samkov-8962799.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "תכלת הנדסה",
+    "image": "https://tkhelet-engineering.com/img/pexels-ivan-samkov-8962799.jpg",
+    "@id": "https://tkhelet-engineering.com/",
+    "url": "https://tkhelet-engineering.com/",
+    "telephone": "+972508448818",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "לא צויין",
+      "addressLocality": "ישראל",
+      "postalCode": "00000",
+      "addressCountry": "IL"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "08:00",
+        "closes": "13:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/tkhelet.engineering",
+      "https://www.linkedin.com/company/tkhelet-engineering"
+    ]
+  }
+  </script>
+
+  <!-- CSS -->
   <style>
     body {
       margin: 0;
@@ -299,34 +361,33 @@
       font-size: 15px;
       user-select: none;
     }
-      .מספר {
+
+    .מספר {
       font-size: 12px;
     }
 
+    #phone-button {
+      position: fixed;
+      bottom: 90px;
+      left: 20px;
+      background-color: rgba(0, 95, 136, 0.85);
+      color: white;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.3s ease;
+    }
 
-      #phone-button {
-    position: fixed;
-    bottom: 90px; /* מעל כפתור הוואטסאפ (שמקומו 20px) */
-    left: 20px;
-    background-color: rgba(0, 95, 136, 0.85); /* כחול תכלת כהה עם שקיפות */
-    color: white;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    z-index: 1001; /* מעל כפתור הוואטסאפ */
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background-color 0.3s ease;
-  }
-
-  #phone-button:hover {
-    background-color: rgba(0, 95, 136, 1);
-  }
-
+    #phone-button:hover {
+      background-color: rgba(0, 95, 136, 1);
+    }
 
     #whatsapp-button {
       position: fixed;
@@ -347,7 +408,6 @@
       width: 40px;
       height: 40px;
     }
-
   </style>
 </head>
 <body>
@@ -356,58 +416,54 @@
   <img src="img/WhatsApp.svg" alt="וואטסאפ">
 </a>
 
-
 <a href="tel:0508448818" id="phone-button" title="לחייג למספר טלפון">
   📞 050-844-8818
 </a>
 
+<div class="סרגל-כלים">
+  <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
 
-  <div class="סרגל-כלים">
-    <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
-
-    <div class="תפריט-ניווט" id="navMenu">
-      <a href="index.html">בית</a>
-      <a href="אודות.html">אודות</a>
-      <a href="שירותים.html">תחומי הפעילות</a>
-      <a href="ממונה בטיחות.html">ממונה בטיחות</a>
-      <a href="המלצות.html">המלצות</a>
-       <a href="articles_page1.html">מאמרים</a>
-      <a href="שאלות.html">שאלות ותשובות</a>
-      <a href="צור קשר.html">צור קשר</a>
-    </div>
-    <div class="המבורגר" id="menuToggle">&#9776;</div>
+  <div class="תפריט-ניווט" id="navMenu">
+    <a href="index.html">בית</a>
+    <a href="אודות.html">אודות</a>
+    <a href="שירותים.html">תחומי הפעילות</a>
+    <a href="ממונה בטיחות.html">ממונה בטיחות</a>
+    <a href="המלצות.html">המלצות</a>
+    <a href="articles_page1.html">מאמרים</a>
+    <a href="שאלות.html">שאלות ותשובות</a>
+    <a href="צור קשר.html">צור קשר</a>
   </div>
+  <div class="המבורגר" id="menuToggle">&#9776;</div>
+</div>
 
-  <div class="כותרת-פתיחה">
-    ביקורת בנייה מקצועית היא לא מותרות – היא הדרך החכמה להגן על הנכס שלכם.
+<div class="כותרת-פתיחה">
+  ביקורת בנייה מקצועית היא לא מותרות – היא הדרך החכמה להגן על הנכס שלכם.
+</div>
+
+<div class="פתיחה-פסקאות" dir="rtl">
+  תכלת הנדסה מתמחה בבדיקות בדק בית ואיתור ליקויי בנייה, ומציעה לכם שירות הנדסי מדויק, אמין ומבוסס ניסיון.<br>
+  אנחנו כאן כדי שתדעו בדיוק מה מצב הנכס שלכם – בלי ניחושים, בלי הפתעות.<br>
+  צוות המומחים של תכלת הנדסה ישמח לעמוד לרשותכם, לייעץ, לבדוק ולתת לכם שקט נפשי.<br>
+  אנחנו מאמינים בשירות אישי, תגובה מהירה וליווי מקצועי מהשיחה הראשונה – ועד הדו”ח הסופי.<br>
+  <strong>השאירו פרטים ונחזור אליכם עם מענה אישי, שקוף ומקצועי – עוד היום.</strong>
+</div>
+
+<div class="צור-קשר-wrapper" dir="rtl">
+  <div class="תיבה-צור-קשר">
+    <div id="הודעה">הפרטים נשלחו בהצלחה! ✉️</div>
+    <h2>טופס יצירת קשר</h2>
+    <form action="https://formsubmit.co/tkhelet.engineering@gmail.com" method="POST" autocomplete="off">
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_subject" value="פנייה חדשה מהאתר של תכלת הנדסה" />
+      <input type="hidden" name="_next" value="https://tkhelet-engineering.com/thank-you.html" />
+
+      <input type="text" name="name" placeholder="*שם מלא" required />
+      <input type="tel" name="phone" placeholder="*מספר טלפון" pattern="[\d\s\+\-\(\)]{7,15}" title="אנא הכנס מספר טלפון תקין" required />
+      <input type="email" name="email" placeholder="*אימייל" required />
+      <input type="text" name="address" placeholder="*אזור הנכס / כתובת" required />
+      <button type="submit">שלח</button>
+    </form>
   </div>
-
-  <div class="פתיחה-פסקאות" dir="rtl">
-    תכלת הנדסה מתמחה בבדיקות בדק בית ואיתור ליקויי בנייה, ומציעה לכם שירות הנדסי מדויק, אמין ומבוסס ניסיון.<br>
-    אנחנו כאן כדי שתדעו בדיוק מה מצב הנכס שלכם – בלי ניחושים, בלי הפתעות.<br>
-    צוות המומחים של תכלת הנדסה ישמח לעמוד לרשותכם, לייעץ, לבדוק ולתת לכם שקט נפשי.<br>
-    אנחנו מאמינים בשירות אישי, תגובה מהירה וליווי מקצועי מהשיחה הראשונה – ועד הדו”ח הסופי.<br>
-    <strong>השאירו פרטים ונחזור אליכם עם מענה אישי, שקוף ומקצועי – עוד היום.</strong>
-  </div>
-
-  <div class="צור-קשר-wrapper" dir="rtl">
-
-    <div class="תיבה-צור-קשר">
-      <div id="הודעה">הפרטים נשלחו בהצלחה! ✉️</div>
-      <h2>טופס יצירת קשר</h2>
-      <form action="https://formsubmit.co/tkhelet.engineering@gmail.com" method="POST" autocomplete="off">
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_subject" value="פנייה חדשה מהאתר של תכלת הנדסה" />
-        <input type="hidden" name="_next" value="https://tkhelet-engineering.com/thank-you.html" />
-
-        <input type="text" name="name" placeholder="*שם מלא" required />
-        <input type="tel" name="phone" placeholder="*מספר טלפון" pattern="[\d\s\+\-\(\)]{7,15}" title="אנא הכנס מספר טלפון תקין" required />
-        <input type="email" name="email" placeholder="*אימייל" required />
-        <input type="text" name="address" placeholder="*אזור הנכס / כתובת" required />
-        <button type="submit">שלח</button>
-      </form>
-    </div>
-
     <div class="כפתורי-יצירת-קשר-ושעות" dir="rtl" role="region" aria-label="יצירת קשר ושעות פעילות">
       <a href="tel:0508448818" title="התקשר עכשיו">
         📞 התקשר עכשיו
@@ -440,14 +496,14 @@
     <p>tkhelet.engineering@gmail.com | 050-844-8818</p>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("navMenu");
-      menu.classList.toggle("active");
-    }
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
 
-    document.getElementById('menuToggle').addEventListener('click', toggleMenu);
-  </script>
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
 
