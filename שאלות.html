@@ -5,48 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>שאלות נפוצות - תכלת הנדסה</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
 
-      /* רקע תמונה עם שכבת שחור שקוף */
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
       background:
         linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
         url('img/WhatsApp Image 2025-07-02 at 22.58.52.jpeg') no-repeat center center fixed;
       background-size: cover;
-      color: #333;
-    }
-    .המבורגר {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      z-index: 1001;
-      user-select: none;
     }
 
-    @media (max-width: 768px) {
-      .תפריט-ניווט {
-        display: none;
-        flex-direction: column;
-        background: #fff;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        padding: 1rem 2rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        z-index: 999;
-      }
-
-      .תפריט-ניווט.active {
-        display: flex;
-      }
-
-      .המבורגר {
-        display: block;
-      }
+    a {
+      text-decoration: none;
+      color: inherit;
     }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .שורה-עליונה {
       background-color: #eeeeee;
       height: 17px;
@@ -58,19 +42,12 @@
       position: relative;
     }
 
-    .שורה-אמצע {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-    }
-
     .סרגל-כלים {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0.8rem 2rem;
-      background-color: #ffffff;
+      background-color: #ffffff; /* לבן */
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: sticky;
       top: 30px;
@@ -101,11 +78,58 @@
       text-decoration: underline;
     }
 
+.המבורגר {
+  display: none; /* יופיע רק במובייל */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.המבורגר span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #333; /* צבע הפסים */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .המבורגר {
+    display: flex;
+  }
+
+  .תפריט-ניווט {
+    display: none; /* סגור כברירת מחדל */
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .תפריט-ניווט.active {
+    display: flex; /* נפתח בלחיצה */
+  }
+}
+
+/* למנוע גלילה כשהתפריט פתוח */
+body.menu-open {
+  overflow: hidden;
+}
+
+
     .faq-container {
       max-width: 900px;
       margin: 3rem auto;
       padding: 0 1rem;
-      /* אין רקע כאן - נשאר שקוף */
     }
 
     .שאלה {
@@ -172,6 +196,52 @@
       height: 40px;
     }
 
+    #phone-button {
+      position: fixed;
+      bottom: 90px;
+      left: 20px;
+      background-color: rgba(0, 95, 136, 0.85);
+      color: white;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    #phone-button:hover {
+      background-color: rgba(0, 95, 136, 1);
+    }
+
+    .כפתורי-פעולה {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .כפתורי-פעולה a {
+      background-color: #4a98e6;
+      color: white;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-size: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .כפתורי-פעולה a:hover {
+      background-color: #3b83cb;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -179,175 +249,6 @@
       font-size: 14px;
       color: rgba(45, 45, 45, 0.6);
     }
-
-    .מספר {
-      font-size: 12px;
-    }
-
-
-.כפתורי-פעולה {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.כפתורי-פעולה a {
-  background-color: #4a98e6;
-  color: white;
-  padding: 14px 26px;
-  border-radius: 8px;
-  font-size: 16px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.כפתורי-פעולה a:hover {
-
-  background-color: #3b83cb;
-}
-
-  #phone-button {
-    position: fixed;
-    bottom: 90px; /* מעל כפתור הוואטסאפ (שמקומו 20px) */
-    left: 20px;
-    background-color: rgba(0, 95, 136, 0.85); /* כחול תכלת כהה עם שקיפות */
-    color: white;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    z-index: 1001; /* מעל כפתור הוואטסאפ */
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background-color 0.3s ease;
-  }
-
-  #phone-button:hover {
-    background-color: rgba(0, 95, 136, 1);
-  }
-
-  /* המבורגר */
-.המבורגר {
-  display: none; /* יופיע רק במובייל */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.המבורגר span {
-  display: block;
-  height: 4px;
-  width: 100%;
-  background: #333; /* צבע הפסים */
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* מצב פתוח - הופך ל-X */
-.המבורגר.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.המבורגר.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.המבורגר.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* הצגת המבורגר במובייל */
-@media (max-width: 768px) {
-  .המבורגר {
-    display: flex;
-  }
-
-  .תפריט-ניווט {
-    display: none; /* סגור כברירת מחדל */
-    flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    z-index: 999;
-  }
-
-  .תפריט-ניווט.active {
-    display: flex; /* נפתח בלחיצה */
-  }
-}
-
-/* איפוס בסיסי */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* קישור ללא קו תחתון */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* תמונות וגודל רספונסיבי */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* סגנון כפתור המבורגר פעיל */
-.המבורגר.active div:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.המבורגר.active div:nth-child(2) {
-  opacity: 0;
-}
-
-.המבורגר.active div:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* איפוס overflow במצב פתוח של התפריט במובייל */
-body.menu-open {
-  overflow: hidden;
-}
-
-/* התאמה נוספת למובייל */
-@media (max-width: 480px) {
-  .סרגל-כלים {
-    padding: 0.5rem 1rem;
-  }
-
-  .תפריט-ניווט a {
-    font-size: 16px;
-    padding: 8px 0;
-  }
-
-  .hero-content h1 {
-    font-size: 24px;
-  }
-
-  .hero-content p {
-    font-size: 16px;
-  }
-}
-
-
   </style>
 </head>
 <body>
@@ -356,27 +257,28 @@ body.menu-open {
   📞 050-844-8818
 </a>
 
-<a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע%20על%20בדק%20בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ">
+<a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע על בדק בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ">
   <img src="img/WhatsApp.svg" alt="וואטסאפ">
 </a>
 
-
-
-  <div class="סרגל-כלים">
-    <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
-
-    <div class="תפריט-ניווט" id="navMenu">
-      <a href="index.html">בית</a>
-      <a href="אודות.html">אודות</a>
-      <a href="שירותים.html">תחומי הפעילות</a>
-      <a href="ממונה בטיחות.html">ממונה בטיחות</a>
-      <a href="המלצות.html">המלצות</a>
-       <a href="articles_page1.html">מאמרים</a>
-      <a href="שאלות.html">שאלות ותשובות</a>
-      <a href="צור קשר.html">צור קשר</a>
-    </div>
-    <div class="המבורגר" id="menuToggle">&#9776;</div>
+<div class="סרגל-כלים">
+  <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
+  <div class="תפריט-ניווט" id="navMenu">
+    <a href="index.html">בית</a>
+    <a href="אודות.html">אודות</a>
+    <a href="שירותים.html">תחומי הפעילות</a>
+    <a href="ממונה בטיחות.html">ממונה בטיחות</a>
+    <a href="המלצות.html">המלצות</a>
+    <a href="articles_page1.html">מאמרים</a>
+    <a href="שאלות.html">שאלות ותשובות</a>
+    <a href="צור קשר.html">צור קשר</a>
   </div>
+  <div class="המבורגר" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
 
 <div class="faq-container">
   <div class="שאלה">
@@ -424,12 +326,14 @@ body.menu-open {
     <div class="תשובה">דרך עמוד "צור קשר", בטלפון או בלחיצה על כפתור הוואטסאפ באתר.</div>
   </div>
 </div>
+
 <div class="כפתורי-פעולה">
   <a href="tel:0508448818">📞 לתיאום בדיקה חייגו</a>
   <a href="https://wa.me/972508448818" target="_blank">
     <img src="img/WhatsApp.svg" alt="וואצאפ" style="width: 20px; height: 20px; vertical-align: middle; margin-left: 8px;">WhatsApp
   </a>
 </div>
+
 <footer>
   <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
   <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
@@ -440,16 +344,17 @@ body.menu-open {
     const item = button.parentElement;
     item.classList.toggle('active');
   }
-</script>
-<script>
+
   // סקריפט למעבר תפריט המבורגר במובייל
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
   menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    document.body.classList.toggle('menu-open'); // למנוע גלילה כשפתוח
   });
 </script>
+
 </body>
 </html>
-
