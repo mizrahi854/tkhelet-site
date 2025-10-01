@@ -1,451 +1,452 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>המלצות לקוחות - תכלת הנדסה</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url("img/WhatsApp Image 2025-07-01 at 13.48.19.jpeg") center/cover no-repeat fixed;
-      position: relative;
-      color: #ffffff;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; right: 0; bottom: 0; left: 0;
-      background-color: rgba(0,0,0,0.6);
-      z-index: -1;
-    }
-
-    .שורה-עליונה {
-      background-color: #eeeeee;
-      height: 17px;
-      font-size: 12px;
-      color: #0077aa;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      user-select: none;
-    }
-
-    .שורה-אמצע {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-    }
-
-    .סרגל-כלים {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.8rem 2rem;
-      background-color: #ffffff; /* לבן מלא */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .סרגל-כלים img {
-      height: 45px;
-    }
-
-    .תפריט-ניווט {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      flex: 1;
-    }
-
-    .תפריט-ניווט a {
-      text-decoration: none;
-      font-size: 17px;
-      font-weight: 500;
-      color: #333;
-      transition: 0.3s;
-      user-select: none;
-    }
-
-    .תפריט-ניווט a:hover {
-      color: #0077aa;
-      text-decoration: underline;
-    }
-
-    .המבורגר {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      z-index: 1001;
-      user-select: none;
-      color: #000000; /* שחור */
-    }
-
-    @media (max-width: 768px) {
-      .תפריט-ניווט {
-        display: none;
-        flex-direction: column;
-        background: #ffffff;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        padding: 1rem 2rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        z-index: 999;
+  <!DOCTYPE html>
+  <html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>המלצות לקוחות - תכלת הנדסה</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url("img/img167.jpeg") center/cover no-repeat fixed;
+        position: relative;
+        color: #ffffff;
       }
 
-      .תפריט-ניווט.active {
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background-color: rgba(0,0,0,0.6);
+        z-index: -1;
+      }
+
+      .שורה-עליונה {
+        background-color: #eeeeee;
+        height: 17px;
+        font-size: 12px;
+        color: #0077aa;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        user-select: none;
+      }
+
+      .שורה-אמצע {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+      }
+
+      .סרגל-כלים {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 2rem;
+        background-color: #ffffff; /* לבן מלא */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .סרגל-כלים img {
+        height: 45px;
+      }
+
+      .תפריט-ניווט {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex: 1;
+      }
+
+      .תפריט-ניווט a {
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 500;
+        color: #333;
+        transition: 0.3s;
+        user-select: none;
+      }
+
+      .תפריט-ניווט a:hover {
+        color: #0077aa;
+        text-decoration: underline;
       }
 
       .המבורגר {
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 1001;
+        user-select: none;
+        color: #000000; /* שחור */
+      }
+
+      @media (max-width: 768px) {
+        .תפריט-ניווט {
+          display: none;
+          flex-direction: column;
+          background: #ffffff;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          width: 100%;
+          padding: 1rem 2rem;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+          z-index: 999;
+        }
+
+        .תפריט-ניווט.active {
+          display: flex;
+        }
+
+        .המבורגר {
+          display: block;
+        }
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: transparent;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 15px;
+        user-select: none;
+      }
+
+      footer p, footer strong {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .כותרת-פתיחה {
+        max-width: 700px;
+        margin: 80px auto 40px auto;
+        padding: 0 1.5rem;
+        color: #ffffff;
+        font-size: 26px;
+        font-weight: 700;
+        text-align: center;
+        user-select: none;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto 80px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        justify-content: center;
+      }
+
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .circle {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #0b4b6c;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        transition: transform 0.2s ease;
+        background-color: white;
+      }
+
+      .circle:hover {
+        transform: scale(1.05);
+      }
+
+      .circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         display: block;
+        user-select: none;
+        pointer-events: none;
       }
-    }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: transparent;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 15px;
-      user-select: none;
-    }
-
-    footer p, footer strong {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .כותרת-פתיחה {
-      max-width: 700px;
-      margin: 80px auto 40px auto;
-      padding: 0 1.5rem;
-      color: #ffffff;
-      font-size: 26px;
-      font-weight: 700;
-      text-align: center;
-      user-select: none;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto 80px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-      justify-content: center;
-    }
-
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
+      .name {
+        font-weight: bold;
+        color: #0b4b6c;
+        margin-top: 10px;
+        font-size: 16px;
       }
-    }
 
-    @media (max-width: 480px) {
-      .grid {
-        grid-template-columns: 1fr;
+      .subtext {
+        font-size: 12px;
+        color: #cccccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 6px;
+        user-select: none;
       }
-    }
 
-    .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      user-select: none;
-    }
+      .subtext::after {
+        content: "➔";
+        display: inline-block;
+        font-size: 16px;
+        color: #cccccc;
+        transition: color 0.3s ease;
+      }
 
-    .circle {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid #0b4b6c;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
-      background-color: white;
-    }
+      .card:hover .subtext::after {
+        color: #0b4b6c;
+      }
 
-    .circle:hover {
-      transform: scale(1.05);
-    }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background-color: rgba(0,0,0,0.7);
+        justify-content: center;
+        align-items: center;
+      }
 
-    .circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      user-select: none;
-      pointer-events: none;
-    }
+      .modal-content {
+        background-color: white;
+        padding: 30px;
+        max-width: 700px;
+        width: 90%;
+        border-radius: 10px;
+        text-align: right;
+        position: relative;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #333;
+        user-select: text;
+      }
 
-    .name {
-      font-weight: bold;
-      color: #0b4b6c;
-      margin-top: 10px;
-      font-size: 16px;
-    }
+      .modal-content .close {
+        position: absolute;
+        left: 15px;
+        top: 10px;
+        font-size: 24px;
+        color: #999;
+        cursor: pointer;
+        user-select: none;
+      }
 
-    .subtext {
-      font-size: 12px;
-      color: #cccccc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      margin-top: 6px;
-      user-select: none;
-    }
+      .modal-content .close:hover {
+        color: black;
+      }
 
-    .subtext::after {
-      content: "➔";
-      display: inline-block;
-      font-size: 16px;
-      color: #cccccc;
-      transition: color 0.3s ease;
-    }
+      #whatsapp-button {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 60px;
+        height: 60px;
+        z-index: 1000;
+        text-decoration: none;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        border-radius: 50%;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    .card:hover .subtext::after {
-      color: #0b4b6c;
-    }
+      #whatsapp-button:hover {
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      }
 
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 10000;
-      top: 0; right: 0; bottom: 0; left: 0;
-      background-color: rgba(0,0,0,0.7);
-      justify-content: center;
-      align-items: center;
-    }
+      #whatsapp-button img {
+        width: 40px;
+        height: 40px;
+        user-select: none;
+        pointer-events: none;
+      }
 
-    .modal-content {
-      background-color: white;
-      padding: 30px;
-      max-width: 700px;
-      width: 90%;
-      border-radius: 10px;
-      text-align: right;
-      position: relative;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #333;
-      user-select: text;
-    }
+      #phone-button {
+        position: fixed;
+        bottom: 90px;
+        left: 20px;
+        background-color: rgba(0, 95, 136, 0.85);
+        color: white;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        z-index: 1001;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: background-color 0.3s ease;
+      }
 
-    .modal-content .close {
-      position: absolute;
-      left: 15px;
-      top: 10px;
-      font-size: 24px;
-      color: #999;
-      cursor: pointer;
-      user-select: none;
-    }
+      #phone-button:hover {
+        background-color: rgba(0, 95, 136, 1);
+      }
 
-    .modal-content .close:hover {
-      color: black;
-    }
+      .כפתורי-פעולה {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+      }
 
-    #whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 60px;
-      height: 60px;
-      z-index: 1000;
-      text-decoration: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      border-radius: 50%;
-      overflow: hidden;
-      transition: box-shadow 0.3s ease;
-      background-color: transparent;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+      .כפתורי-פעולה a {
+        background-color: #4a98e6;
+        color: white;
+        padding: 14px 26px;
+        border-radius: 8px;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
 
-    #whatsapp-button:hover {
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
+      .כפתורי-פעולה a:hover {
+        background-color: #3b83cb;
+      }
+    </style>
+  </head>
+  <body>
 
-    #whatsapp-button img {
-      width: 40px;
-      height: 40px;
-      user-select: none;
-      pointer-events: none;
-    }
-
-    #phone-button {
-      position: fixed;
-      bottom: 90px;
-      left: 20px;
-      background-color: rgba(0, 95, 136, 0.85);
-      color: white;
-      padding: 8px 16px;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      z-index: 1001;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: background-color 0.3s ease;
-    }
-
-    #phone-button:hover {
-      background-color: rgba(0, 95, 136, 1);
-    }
-
-    .כפתורי-פעולה {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .כפתורי-פעולה a {
-      background-color: #4a98e6;
-      color: white;
-      padding: 14px 26px;
-      border-radius: 8px;
-      font-size: 16px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .כפתורי-פעולה a:hover {
-      background-color: #3b83cb;
-    }
-  </style>
-</head>
-<body>
-
-<a href="tel:0508448818" id="phone-button" title="לחייג למספר טלפון">
-  📞 050-844-8818
-</a>
-
-<a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע%20על%20בדק%20בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ">
-  <img src="img/WhatsApp.svg" alt="וואטסאפ" />
-</a>
-
-<div class="סרגל-כלים">
-  <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
-  <div class="תפריט-ניווט" id="navMenu">
-    <a href="index.html">בית</a>
-    <a href="אודות.html">אודות</a>
-    <a href="שירותים.html">תחומי הפעילות</a>
-    <a href="ממונה בטיחות.html">ממונה בטיחות</a>
-    <a href="המלצות.html">המלצות</a>
-    <a href="articles_page1.html">מאמרים</a>
-    <a href="שאלות.html">שאלות ותשובות</a>
-    <a href="צור קשר.html">צור קשר</a>
-  </div>
-  <div class="המבורגר" id="menuToggle">&#9776;</div>
-</div>
-
-<div class="כותרת-פתיחה">
-המלצות מלקוחות
-</div>
-
-<div class="container">
-  <div class="grid">
-    <div class="card" onclick="openModal(1)">
-      <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="תמר" /></div>
-      <div class="name">תמר, תל אביב</div>
-      <div class="subtext">לחץ כדי לראות את ההמלצה</div>
-    </div>
-    <div class="card" onclick="openModal(2)">
-      <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="ליאור" /></div>
-      <div class="name">ליאור, ראשון לציון</div>
-      <div class="subtext">לחץ כדי לראות את ההמלצה</div>
-    </div>
-    <div class="card" onclick="openModal(3)">
-      <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="משה" /></div>
-      <div class="name">משה, פתח תקווה</div>
-      <div class="subtext">לחץ כדי לראות את ההמלצה</div>
-    </div>
-    <div class="card" onclick="openModal(4)">
-      <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="שרית ועמית" /></div>
-      <div class="name">שרית ועמית, נס ציונה</div>
-      <div class="subtext">לחץ כדי לראות את ההמלצה</div>
-    </div>
-    <div class="card" onclick="openModal(5)">
-      <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="דנה ועמית" /></div>
-      <div class="name">דנה ועמית, באר יעקב</div>
-      <div class="subtext">לחץ כדי לראות את ההמלצה</div>
-    </div>
-    <div class="card" onclick="openModal(6)">
-      <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="הדר" /></div>
-      <div class="name">הדר, מודיעין</div>
-      <div class="subtext">לחץ כדי לראות את ההמלצה</div>
-    </div>
-    <div class="card" onclick="openModal(7)">
-      <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="יואב" /></div>
-      <div class="name">יואב, חולון</div>
-      <div class="subtext">לחץ כדי לראות את ההמלצה</div>
-    </div>
-    <div class="card" onclick="openModal(8)">
-      <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="רונית" /></div>
-      <div class="name">רונית, כפר סבא</div>
-      <div class="subtext">לחץ כדי לראות את ההמלצה</div>
-    </div>
-  </div>
-</div>
-
-<!-- מודאלים -->
-<div id="modal1" class="modal" onclick="closeModal(1)">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="close" onclick="closeModal(1)">&times;</span>
-    <p>אין מילים! השירות שקיבלנו מתכלת הנדסה היה הרבה מעבר למצופה – יסודיות, מקצועיות, סבלנות והסברים ברורים. קיבלנו דו״ח מפורט ועזרו לנו להבין כל פרט. הרגשנו שיש על מי לסמוך מהרגע הראשון. מומלץ בחום!</p>
-  </div>
-</div>
-
-<!-- החזרת כל שאר המודאלים כאן כמו בקובץ שלך -->
-
-</div>
-<div class="כפתורי-פעולה">
-  <a href="tel:0508448818">📞 לתיאום בדיקה חייגו</a>
-  <a href="https://wa.me/972508448818" target="_blank">
-    <img src="img/WhatsApp.svg" alt="וואצאפ" style="width: 20px; height: 20px; vertical-align: middle; margin-left: 8px;">WhatsApp
+  <a href="tel:0508448818" id="phone-button" title="לחייג למספר טלפון">
+    📞 050-844-8818
   </a>
-</div>
 
-<footer>
-  <p>© כל הזכויות שמורות לתכלת הנדסה</p>
-</footer>
+  <a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע%20על%20בדק%20בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ">
+    <img src="img/WhatsApp.svg" alt="וואטסאפ" />
+  </a>
 
-<script>
-  function openModal(id) {
-    document.getElementById('modal' + id).style.display = 'flex';
-  }
-  function closeModal(id) {
-    document.getElementById('modal' + id).style.display = 'none';
-  }
+  <div class="סרגל-כלים">
+    <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
+    <div class="תפריט-ניווט" id="navMenu">
+      <a href="index.html">בית</a>
+      <a href="אודות.html">אודות</a>
+      <a href="שירותים.html">תחומי הפעילות</a>
+      <a href="ממונה בטיחות.html">ממונה בטיחות</a>
+      <a href="המלצות.html">המלצות</a>
+      <a href="articles_page1.html">מאמרים</a>
+      <a href="שאלות.html">שאלות ותשובות</a>
+      <a href="צור קשר.html">צור קשר</a>
+    </div>
+    <div class="המבורגר" id="menuToggle">&#9776;</div>
+  </div>
 
-  // המבורגר - פתיחת תפריט במובייל
-  const menuToggle = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
-  menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
-</script>
+  <div class="כותרת-פתיחה">
+  המלצות מלקוחות
+  </div>
 
-</body>
-</html>
+  <div class="container">
+    <div class="grid">
+      <div class="card" onclick="openModal(1)">
+        <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="תמר" /></div>
+        <div class="name">תמר, תל אביב</div>
+        <div class="subtext">לחץ כדי לראות את ההמלצה</div>
+      </div>
+      <div class="card" onclick="openModal(2)">
+        <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="ליאור" /></div>
+        <div class="name">ליאור, ראשון לציון</div>
+        <div class="subtext">לחץ כדי לראות את ההמלצה</div>
+      </div>
+      <div class="card" onclick="openModal(3)">
+        <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="משה" /></div>
+        <div class="name">משה, פתח תקווה</div>
+        <div class="subtext">לחץ כדי לראות את ההמלצה</div>
+      </div>
+      <div class="card" onclick="openModal(4)">
+        <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="שרית ועמית" /></div>
+        <div class="name">שרית ועמית, נס ציונה</div>
+        <div class="subtext">לחץ כדי לראות את ההמלצה</div>
+      </div>
+      <div class="card" onclick="openModal(5)">
+        <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="דנה ועמית" /></div>
+        <div class="name">דנה ועמית, באר יעקב</div>
+        <div class="subtext">לחץ כדי לראות את ההמלצה</div>
+      </div>
+      <div class="card" onclick="openModal(6)">
+        <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="הדר" /></div>
+        <div class="name">הדר, מודיעין</div>
+        <div class="subtext">לחץ כדי לראות את ההמלצה</div>
+      </div>
+      <div class="card" onclick="openModal(7)">
+        <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="יואב" /></div>
+        <div class="name">יואב, חולון</div>
+        <div class="subtext">לחץ כדי לראות את ההמלצה</div>
+      </div>
+      <div class="card" onclick="openModal(8)">
+        <div class="circle"><img src="img/WhatsApp Image 2025-07-01 at 13.46.42.jpeg" alt="רונית" /></div>
+        <div class="name">רונית, כפר סבא</div>
+        <div class="subtext">לחץ כדי לראות את ההמלצה</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- מודאלים -->
+  <div id="modal1" class="modal" onclick="closeModal(1)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close" onclick="closeModal(1)">&times;</span>
+      <p>אין מילים! השירות שקיבלנו מתכלת הנדסה היה הרבה מעבר למצופה – יסודיות, מקצועיות, סבלנות והסברים ברורים. קיבלנו דו״ח מפורט ועזרו לנו להבין כל פרט. הרגשנו שיש על מי לסמוך מהרגע הראשון. מומלץ בחום!</p>
+    </div>
+  </div>
+
+  <!-- החזרת כל שאר המודאלים כאן כמו בקובץ שלך -->
+
+  </div>
+  <div class="כפתורי-פעולה">
+    <a href="tel:0508448818">📞 לתיאום בדיקה חייגו</a>
+    <a href="https://wa.me/972508448818" target="_blank">
+      <img src="img/WhatsApp.svg" alt="וואצאפ" style="width: 20px; height: 20px; vertical-align: middle; margin-left: 8px;">WhatsApp
+    </a>
+  </div>
+
+  <footer>
+    <p>© כל הזכויות שמורות לתכלת הנדסה</p>
+  </footer>
+
+  <script>
+    function openModal(id) {
+      document.getElementById('modal' + id).style.display = 'flex';
+    }
+    function closeModal(id) {
+      document.getElementById('modal' + id).style.display = 'none';
+    }
+
+    // המבורגר - פתיחת תפריט במובייל
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+
+  </body>
+  </html>
+
