@@ -451,13 +451,12 @@ li {
   }
 
   /* שיפור קריאות הקישורים במובייל */
-  .תפריט-ניווט a {
-    padding: 15px 0;
-    font-size: 18px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    color: #222;
-    text-align: center;
-  }
+.תפריט-ניווט {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start; /* מיושרים לימין */
+  flex: none; /* לא מתרחב על כל הסרגל */
+}
 
   /* שתיים תמונות בשורה במובייל */
   .שירותים-תמונות {
@@ -487,6 +486,27 @@ li {
 }
 
 
+/* סתר את תפריט הניווט כברירת מחדל במובייל */
+@media (max-width: 768px) {
+  .תפריט-ניווט {
+    display: none;          /* מתחיל סגור */
+    flex-direction: column;
+    position: fixed;
+    top: 70px;              /* מתחת לסרגל */
+    right: 0;
+    left: 0;
+    height: calc(100% - 70px);
+    overflow-y: auto;
+    background-color: #fff;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    z-index: 9999;
+  }
+
+  .תפריט-ניווט.active {
+    display: flex;          /* מופיע רק כשמחלקים active */
+  }
+}
 
 
   </style>
@@ -625,6 +645,8 @@ li {
         }
       });
     }
+
+    
   </script>
 </body>
 </html>
