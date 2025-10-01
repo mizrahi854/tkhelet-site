@@ -1,4 +1,4 @@
-ֿ;<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -60,16 +60,26 @@
       white-space: nowrap;
     }
 
+    /* === כאן השינוי: סרגל כלים לבן ללא שקיפות === */
     .סרגל-כלים {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0.8rem 2rem;
-      background-color: #ffffff;
+      background-color: #ffffff; /* לבן מלא */
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: sticky;
       top: 17px;
       z-index: 1000;
+    }
+
+    /* צבעי הפסים של המבורגר שחורים */
+    .המבורגר {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
+      color: #000; /* שחור */
     }
 
     .סרגל-כלים img {
@@ -94,13 +104,6 @@
     .תפריט-ניווט a:hover {
       color: #0077aa;
       text-decoration: underline;
-    }
-
-    .המבורגר {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      z-index: 1001;
     }
 
     @media (max-width: 768px) {
@@ -167,21 +170,18 @@
       padding: 2rem 1rem;
     }
 
-    /* צמצום רווח בין כותרות לטקסט למינימום */
     .section h2 {
       font-size: 1.6rem;
       color: #003c74;
       margin-top: 0;
-      margin-bottom: 0.3rem; /* רווח קטן מתחת לכותרת */
-      font-weight: normal; /* אם תרצה שזה ייראה כמו טקסט רגיל */
+      margin-bottom: 0.3rem;
+      font-weight: normal;
     }
 
-    /* הסרת הקו התחתון מתחת לכותרת */
     .section h2::after {
       display: none;
     }
 
-    /* צמצום מרווח עליון של טקסט מתחת לכותרת */
     .section .text-content,
     .section ul.icon-list {
       margin-top: 0;
@@ -279,14 +279,12 @@
       font-size: 12px;
     }
 
-    /* הגדלת הפסקה הראשונה משמעותית */
     .section.first-paragraph p:first-child {
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 1.5rem;
     }
 
-    /* מיכל טקסט ותמונה בשורה */
     .text-image-row {
       display: flex;
       align-items: center;
@@ -295,16 +293,14 @@
       flex-wrap: wrap;
     }
 
-    /* תמונה מצד ימין */
     .text-image-row img {
       max-width: 350px;
       width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      order: 2; /* תמונה ימין ב-RTL */
+      order: 2;
     }
 
-    /* הגדלת התמונה האמצעית (סקשן 2) */
     section.section:nth-of-type(2) .text-image-row img {
       max-width: 350px;
       width: 100%;
@@ -313,7 +309,6 @@
       order: 2;
     }
 
-    /* טקסט מצד שמאל */
     .text-image-row .text-content {
       flex: 1;
       order: 1;
@@ -321,7 +316,6 @@
       color: #222;
     }
 
-    /* מובייל - טור */
     @media (max-width: 768px) {
       .text-image-row {
         flex-direction: column;
@@ -385,63 +379,57 @@
       background-color: rgba(0, 95, 136, 1);
     }
 
-    /* איפוס בסיסי */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* קישור ללא קו תחתון */
-a {
-  text-decoration: none;
-  color: inherit;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-/* תמונות וגודל רספונסיבי */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
-/* סגנון כפתור המבורגר פעיל */
-.המבורגר.active div:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
+    .המבורגר.active div:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
 
-.המבורגר.active div:nth-child(2) {
-  opacity: 0;
-}
+    .המבורגר.active div:nth-child(2) {
+      opacity: 0;
+    }
 
-.המבורגר.active div:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
+    .המבורגר.active div:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
 
-/* איפוס overflow במצב פתוח של התפריט במובייל */
-body.menu-open {
-  overflow: hidden;
-}
+    body.menu-open {
+      overflow: hidden;
+    }
 
-/* התאמה נוספת למובייל */
-@media (max-width: 480px) {
-  .סרגל-כלים {
-    padding: 0.5rem 1rem;
-  }
+    @media (max-width: 480px) {
+      .סרגל-כלים {
+        padding: 0.5rem 1rem;
+      }
 
-  .תפריט-ניווט a {
-    font-size: 16px;
-    padding: 8px 0;
-  }
+      .תפריט-ניווט a {
+        font-size: 16px;
+        padding: 8px 0;
+      }
 
-  .hero-content h1 {
-    font-size: 24px;
-  }
+      .hero-content h1 {
+        font-size: 24px;
+      }
 
-  .hero-content p {
-    font-size: 16px;
-  }
-}
+      .hero-content p {
+        font-size: 16px;
+      }
+    }
 
   </style>
 </head>
@@ -450,125 +438,121 @@ body.menu-open {
   📞 050-844-8818
 </a>
 
+<a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע%20על%20בדק%20בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ">
+  <img src="img/WhatsApp.svg" alt="">
+</a>
 
-  <a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע%20על%20בדק%20בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ">
-    <img src="img/WhatsApp.svg" alt="">
-  </a>
+<div class="סרגל-כלים">
+  <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
+  <div class="תפריט-ניווט" id="navMenu">
+    <a href="index.html">בית</a>
+    <a href="אודות.html">אודות</a>
+    <a href="שירותים.html">תחומי הפעילות</a>
+    <a href="ממונה בטיחות.html">ממונה בטיחות</a>
+    <a href="המלצות.html">המלצות</a>
+    <a href="articles_page1.html">מאמרים</a>
+    <a href="שאלות.html">שאלות ותשובות</a>
+    <a href="צור קשר.html">צור קשר</a>
+  </div>
+  <div class="המבורגר" id="menuToggle">&#9776;</div>
+</div>
 
-  <div class="סרגל-כלים">
-    <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
-  
-    <div class="תפריט-ניווט" id="navMenu">
-      <a href="index.html">בית</a>
-      <a href="אודות.html">אודות</a>
-      <a href="שירותים.html">תחומי הפעילות</a>
-      <a href="ממונה בטיחות.html">ממונה בטיחות</a>
-      <a href="המלצות.html">המלצות</a>
-      <a href="articles_page1.html">מאמרים</a>
-      <a href="שאלות.html">שאלות ותשובות</a>
-      <a href="צור קשר.html">צור קשר</a>
+<header>
+  <h1>ממונה בטיחות מוסמך – כי אין תחליף לבטיחות בבנייה</h1>
+</header>
+
+<main class="container">
+  <section class="section first-paragraph">
+    <p>
+      בענף הבנייה, בטיחות היא לא המלצה – היא <span class="highlight">חובה</span>.<br>
+      כדי להבטיח שכל שלב בפרויקט יתבצע תוך שמירה על חיי אדם, תקנות העבודה והתקנים ההנדסיים, נדרש איש מקצוע בעל הסמכה ייחודית: <span class="highlight">ממונה בטיחות מוסמך</span> מטעם משרד העבודה.
+    </p>
+    <div class="text-image-row">
+      <div class="text-content">
+        <p>
+          ב”תכלת הנדסה”, השירותים מתבצעים על ידי <strong>מוטי אדרי</strong> – הנדסאי בניין, מנהל עבודה מוסמך וממונה בטיחות, עם ניסיון רב באיתור ליקויי בטיחות באתרי בנייה, מבנים קיימים, תוספות בנייה ותמ״א 38.
+        </p>
+      </div>
     </div>
-    <div class="המבורגר" id="menuToggle">&#9776;</div>
-  </div>
+  </section>
 
-  <header>
-    <h1>ממונה בטיחות מוסמך – כי אין תחליף לבטיחות בבנייה</h1>
-  </header>
+  <div class="divider"></div>
 
-  <main class="container">
-    <section class="section first-paragraph">
-      <p>
-        בענף הבנייה, בטיחות היא לא המלצה – היא <span class="highlight">חובה</span>.<br>
-        כדי להבטיח שכל שלב בפרויקט יתבצע תוך שמירה על חיי אדם, תקנות העבודה והתקנים ההנדסיים, נדרש איש מקצוע בעל הסמכה ייחודית: <span class="highlight">ממונה בטיחות מוסמך</span> מטעם משרד העבודה.
-      </p>
-
-      <div class="text-image-row">
-        <div class="text-content">
-          <p>
-            ב”תכלת הנדסה”, השירותים מתבצעים על ידי <strong>מוטי אדרי</strong> – הנדסאי בניין, מנהל עבודה מוסמך וממונה בטיחות, עם ניסיון רב באיתור ליקויי בטיחות באתרי בנייה, מבנים קיימים, תוספות בנייה ותמ״א 38.
-          </p>
-        </div>
+  <section class="section">
+    <div class="text-image-row">
+      <div class="text-content">
+        <h2>מה עושה ממונה בטיחות?</h2>
+        <ul class="icon-list">
+          <li>מזהה סיכונים פיזיים ותכנוניים באתר הבנייה</li>
+          <li>מוודא עמידה בתקנות הבטיחות של משרד העבודה</li>
+          <li>מלווה קבלנים ודיירים בפרויקטים מורכבים (כגון חיזוק מבנים)</li>
+          <li>מספק חוות דעת מקצועית על ליקויי בטיחות במבנה</li>
+          <li>עוזר להימנע מטעויות מסוכנות או יקרות לאורך הדרך</li>
+          <li>עורך בדיקות בטיחות יזומות במבנים ישנים, אתרי בנייה, גגות, מעליות ועוד</li>
+        </ul>
       </div>
-    </section>
+      <img src="img/WhatsApp Image 2025-07-02 at 22.57.24.jpeg" alt="ממונה בטיחות תכלת הנדסה" />
+    </div>
+  </section>
 
-    <div class="divider"></div>
+  <div class="divider"></div>
 
-    <section class="section">
-      <div class="text-image-row">
-        <div class="text-content">
-          <h2>מה עושה ממונה בטיחות?</h2>
-          <ul class="icon-list">
-            <li>מזהה סיכונים פיזיים ותכנוניים באתר הבנייה</li>
-            <li>מוודא עמידה בתקנות הבטיחות של משרד העבודה</li>
-            <li>מלווה קבלנים ודיירים בפרויקטים מורכבים (כגון חיזוק מבנים)</li>
-            <li>מספק חוות דעת מקצועית על ליקויי בטיחות במבנה</li>
-            <li>עוזר להימנע מטעויות מסוכנות או יקרות לאורך הדרך</li>
-            <li>עורך בדיקות בטיחות יזומות במבנים ישנים, אתרי בנייה, גגות, מעליות ועוד</li>
-          </ul>
-        </div>
-        <img src="img/WhatsApp Image 2025-07-02 at 22.57.24.jpeg" alt="ממונה בטיחות תכלת הנדסה" />
+  <section class="section">
+    <div class="text-image-row">
+      <div class="text-content">
+        <h2>למה חשוב שתהיה גם הסמכת ממונה בטיחות?</h2>
+        <ul class="icon-list">
+          <li>כי לא כל מהנדס או בדקן מוסמך גם בבטיחות לפי משרד העבודה</li>
+          <li>כי בפרויקטים של תמ״א 38, שיפוץ או תוספות בנייה – יש סיכון אמיתי לבני אדם</li>
+          <li>כי דוח בטיחות מוסמך נדרש במקרים משפטיים, מול קבלן או רשויות</li>
+          <li>כי זה נותן לך ביטחון מקצועי נוסף מול כל גורם בבנייה או ברכישה</li>
+        </ul>
       </div>
-    </section>
+      <img src="img/WhatsApp Image 2025-07-03 at 19.10.58.jpeg" alt="ממונה בטיחות תכלת הנדסה" />
+    </div>
+  </section>
 
-    <div class="divider"></div>
+  <div class="divider"></div>
 
-    <section class="section">
-      <div class="text-image-row">
-        <div class="text-content">
-          <h2>למה חשוב שתהיה גם הסמכת ממונה בטיחות?</h2>
-          <ul class="icon-list">
-            <li>כי לא כל מהנדס או בדקן מוסמך גם בבטיחות לפי משרד העבודה</li>
-            <li>כי בפרויקטים של תמ״א 38, שיפוץ או תוספות בנייה – יש סיכון אמיתי לבני אדם</li>
-            <li>כי דוח בטיחות מוסמך נדרש במקרים משפטיים, מול קבלן או רשויות</li>
-            <li>כי זה נותן לך ביטחון מקצועי נוסף מול כל גורם בבנייה או ברכישה</li>
-          </ul>
-        </div>
-        <img src="img/WhatsApp Image 2025-07-03 at 19.10.58.jpeg" alt="ממונה בטיחות תכלת הנדסה" />
+  <section class="section">
+    <div class="text-image-row">
+      <div class="text-content">
+        <h2>שירותים נוספים בתחום הבטיחות:</h2>
+        <ul class="icon-list">
+          <li>חוות דעת על ליקויי בטיחות</li>
+          <li>ליווי בטיחות בפרויקטים</li>
+          <li>בדיקות מבנה לקראת אכלוס</li>
+          <li>בדיקת סולמות, גגות, מעליות, מחסנים</li>
+          <li>ליווי בטיחות בשיפוץ מבנים מאוכלסים</li>
+          <li>סיוע בהתאמה לתקנות תכנון ובנייה</li>
+        </ul>
       </div>
-    </section>
+      <img src="img/WhatsApp Image 2025-07-03 at 19.15.15.jpeg" alt="ממונה בטיחות תכלת הנדסה" />
+    </div>
+  </section>
 
-    <div class="divider"></div>
+</main>
 
-    <section class="section">
-      <div class="text-image-row">
-        <div class="text-content">
-          <h2>שירותים נוספים בתחום הבטיחות:</h2>
-          <ul class="icon-list">
-            <li>חוות דעת על ליקויי בטיחות</li>
-            <li>ליווי בטיחות בפרויקטים</li>
-            <li>בדיקות מבנה לקראת אכלוס</li>
-            <li>בדיקת סולמות, גגות, מעליות, מחסנים</li>
-            <li>ליווי בטיחות בשיפוץ מבנים מאוכלסים</li>
-            <li>סיוע בהתאמה לתקנות תכנון ובנייה</li>
-          </ul>
-        </div>
-        <img src="img/WhatsApp Image 2025-07-03 at 19.15.15.jpeg" alt="ממונה בטיחות תכלת הנדסה" />
-      </div>
-    </section>
+<div class="כפתורי-פעולה">
+  <a href="tel:0508448818">📞 לתיאום בדיקה חייגו</a>
+  <a href="https://wa.me/972508448818" target="_blank">
+    <img src="img/WhatsApp.svg" alt="וואצאפ" style="width: 20px; height: 20px; vertical-align: middle; margin-left: 8px;">WhatsApp
+  </a>
+</div>
 
-  </main>
+<footer>
+  <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
+  <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
+</footer>
 
-  <div class="כפתורי-פעולה">
-    <a href="tel:0508448818">📞 לתיאום בדיקה חייגו</a>
-    <a href="https://wa.me/972508448818" target="_blank">
-      <img src="img/WhatsApp.svg" alt="וואצאפ" style="width: 20px; height: 20px; vertical-align: middle; margin-left: 8px;">WhatsApp
-    </a>
-  </div>
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
 
-  <footer>
-    <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
-    <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
-  </footer>
-
-  <script>
-    // סקריפט למעבר תפריט המבורגר במובייל
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  </script>
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
 
