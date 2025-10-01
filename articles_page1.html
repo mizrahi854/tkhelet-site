@@ -91,31 +91,29 @@
       color: white;
     }
 
+    #phone-button {
+      position: fixed;
+      bottom: 90px;
+      left: 20px;
+      background-color: rgba(0, 95, 136, 0.85);
+      color: white;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.3s ease;
+    }
+    #phone-button:hover {
+      background-color: rgba(0, 95, 136, 1);
+    }
 
-  #phone-button {
-    position: fixed;
-    bottom: 90px; /* מעל כפתור הוואטסאפ (שמקומו 20px) */
-    left: 20px;
-    background-color: rgba(0, 95, 136, 0.85); /* כחול תכלת כהה עם שקיפות */
-    color: white;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    z-index: 1001; /* מעל כפתור הוואטסאפ */
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background-color 0.3s ease;
-  }
-
-  #phone-button:hover {
-    background-color: rgba(0, 95, 136, 1);
-  }
-
-     #whatsapp-button {
+    #whatsapp-button {
       position: fixed;
       bottom: 20px;
       left: 20px;
@@ -132,11 +130,9 @@
       align-items: center;
       justify-content: center;
     }
-
     #whatsapp-button:hover {
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
-
     #whatsapp-button img {
       width: 40px;
       height: 40px;
@@ -144,14 +140,13 @@
       pointer-events: none;
     }
 
-        footer {
+    footer {
       text-align: center;
       padding: 1rem;
       background-color: transparent;
       color: rgba(255, 255, 255, 0.7);
       font-size: 15px;
     }
-
     footer p, footer strong {
       color: rgba(46, 46, 46, 0.7);
     }
@@ -159,7 +154,7 @@
       margin-bottom: 2px;
     }
 
-        .שורה-עליונה {
+    .שורה-עליונה {
       background-color: #eeeeee;
       height: 17px;
       font-size: 12px;
@@ -169,14 +164,12 @@
       justify-content: center;
       position: relative;
     }
-
     .שורה-אמצע {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
       white-space: nowrap;
     }
-
     .סרגל-כלים {
       display: flex;
       justify-content: space-between;
@@ -188,18 +181,15 @@
       top: 30px;
       z-index: 1000;
     }
-
     .סרגל-כלים img {
       height: 45px;
     }
-
     .תפריט-ניווט {
       display: flex;
       gap: 1.5rem;
       justify-content: center;
       flex: 1;
     }
-
     .תפריט-ניווט a {
       text-decoration: none;
       font-size: 17px;
@@ -207,12 +197,10 @@
       color: #333;
       transition: 0.3s;
     }
-
     .תפריט-ניווט a:hover {
       color: #0077aa;
       text-decoration: underline;
     }
-
     .המבורגר {
       display: none;
       font-size: 28px;
@@ -220,7 +208,6 @@
       z-index: 1001;
       user-select: none;
     }
-
     @media (max-width: 768px) {
       .תפריט-ניווט {
         display: none;
@@ -234,184 +221,75 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         z-index: 999;
       }
-
       .תפריט-ניווט.active {
         display: flex;
       }
-
       .המבורגר {
         display: block;
       }
     }
-    /* איפוס בסיסי */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
-/* קישור ללא קו תחתון */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* תמונות וגודל רספונסיבי */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* סגנון כפתור המבורגר פעיל */
-.המבורגר.active div:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.המבורגר.active div:nth-child(2) {
-  opacity: 0;
-}
-
-.המבורגר.active div:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* איפוס overflow במצב פתוח של התפריט במובייל */
-body.menu-open {
-  overflow: hidden;
-}
-
-/* התאמה נוספת למובייל */
-@media (max-width: 480px) {
-  .סרגל-כלים {
-    padding: 0.5rem 1rem;
-  }
-
-  .תפריט-ניווט a {
-    font-size: 16px;
-    padding: 8px 0;
-  }
-
-  .hero-content h1 {
-    font-size: 24px;
-  }
-
-  .hero-content p {
-    font-size: 16px;
-  }
-}
-
-/* איפוס בסיסי */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* קישור ללא קו תחתון */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* תמונות וגודל רספונסיבי */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* סגנון כפתור המבורגר פעיל */
-.המבורגר.active div:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.המבורגר.active div:nth-child(2) {
-  opacity: 0;
-}
-
-.המבורגר.active div:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* איפוס overflow במצב פתוח של התפריט במובייל */
-body.menu-open {
-  overflow: hidden;
-}
-
-/* התאמה נוספת למובייל */
-@media (max-width: 480px) {
-  .סרגל-כלים {
-    padding: 0.5rem 1rem;
-  }
-
-  .תפריט-ניווט a {
-    font-size: 16px;
-    padding: 8px 0;
-  }
-
-  .hero-content h1 {
-    font-size: 24px;
-  }
-
-  .hero-content p {
-    font-size: 16px;
-  }
-}
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    .המבורגר.active div:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+    .המבורגר.active div:nth-child(2) { opacity: 0; }
+    .המבורגר.active div:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+    body.menu-open { overflow: hidden; }
+    @media (max-width: 480px) {
+      .סרגל-כלים { padding: 0.5rem 1rem; }
+      .תפריט-ניווט a { font-size: 16px; padding: 8px 0; }
+      .hero-content h1 { font-size: 24px; }
+      .hero-content p { font-size: 16px; }
+    }
 
   </style>
 </head>
 <body>
 
- <a href="tel:0508448818" id="phone-button" title="לחייג למספר טלפון">
-  📞 050-844-8818
-</a>
-
- <a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע%20על%20בדק%20בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ">
+<a href="tel:0508448818" id="phone-button" title="לחייג למספר טלפון">📞 050-844-8818</a>
+<a href="https://wa.me/972508448818?text=שלום%2C%20ראיתי%20את%20האתר%20של%20תכלת%20הנדסה.%20אשמח%20לקבל%20מידע%20על%20בדק%20בית." target="_blank" id="whatsapp-button" title="שלח הודעה בוואטסאפ">
   <img src="img/WhatsApp.svg" alt="וואטסאפ">
 </a>
 
-
-
-  <div class="סרגל-כלים">
-    <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
-
-    <div class="תפריט-ניווט" id="navMenu">
-      <a href="index.html">בית</a>
-      <a href="אודות.html">אודות</a>
-      <a href="שירותים.html">תחומי הפעילות</a>
-      <a href="ממונה בטיחות.html">ממונה בטיחות</a>
-      <a href="המלצות.html">המלצות</a>
-       <a href="articles_page1.html">מאמרים</a>
-      <a href="שאלות.html">שאלות ותשובות</a>
-      <a href="צור קשר.html">צור קשר</a>
-    </div>
-    <div class="המבורגר" id="menuToggle">&#9776;</div>
+<div class="סרגל-כלים">
+  <img src="img/f3390bad-4d77-4662-8b7f-06cc8a3031d0.png" alt="לוגו תכלת הנדסה" />
+  <div class="תפריט-ניווט" id="navMenu">
+    <a href="index.html">בית</a>
+    <a href="אודות.html">אודות</a>
+    <a href="שירותים.html">תחומי הפעילות</a>
+    <a href="ממונה בטיחות.html">ממונה בטיחות</a>
+    <a href="המלצות.html">המלצות</a>
+    <a href="articles_page1.html">מאמרים</a>
+    <a href="שאלות.html">שאלות ותשובות</a>
+    <a href="צור קשר.html">צור קשר</a>
   </div>
+  <div class="המבורגר" id="menuToggle">&#9776;</div>
+</div>
 
-  <header>
-    <h1>מאמרים - תכלת הנדסה</h1>
-  </header>
+<header>
+  <h1>מאמרים - תכלת הנדסה</h1>
+</header>
 
-  <div class="articles-container">
-    <article class="article-box">
-      <h3 class="article-title">בדק בית לאחר שיפוץ – מה חשוב לבדוק?</h3>
-      <p class="article-summary">
-        שיפצתם? כדאי לבדוק שהתוצאה עומדת בתקן – לפני שתשלמו או תגלו בעיות.
-        בדיקה יסודית אחרי שיפוץ יכולה לחסוך בעיות עתידיות, לזהות ליקויים ולוודא שהכל נעשה על פי הדרישות.
-      </p>
-      <a href="article7.html" class="read-link">›› קרא עוד</a>
-    </article>
+<div class="articles-container">
+  <!-- כאן יכנסו כל המאמרים כפי שהעתקת אותם -->
+  <article class="article-box">
+    <h3 class="article-title">בדק בית לאחר שיפוץ – מה חשוב לבדוק?</h3>
+    <p class="article-summary">
+      שיפצתם? כדאי לבדוק שהתוצאה עומדת בתקן – לפני שתשלמו או תגלו בעיות.
+      בדיקה יסודית אחרי שיפוץ יכולה לחסוך בעיות עתידיות, לזהות ליקויים ולוודא שהכל נעשה על פי הדרישות.
+    </p>
+    <a href="article7.html" class="read-link">›› קרא עוד</a>
+  </article>
 
-    <article class="article-box">
-      <h3 class="article-title">בדק בית בבית פרטי – מה שונה מדירה?</h3>
-      <p class="article-summary">
-        בדק בית בבית פרטי כולל גם גגות, חצר, ניקוזים – ומחייב בדיקה רחבה ומקצועית.
-        ישנם הבדלים רבים בין בדק בית בבית פרטי לבין בדירה – החל מטיפול בגגות ועד מערכות ניקוז מורכבות יותר.
-      </p>
-      <a href="article8.html" class="read-link">›› קרא עוד</a>
-    </article>
+  <article class="article-box">
+    <h3 class="article-title">בדק בית בבית פרטי – מה שונה מדירה?</h3>
+    <p class="article-summary">
+      בדק בית בבית פרטי כולל גם גגות, חצר, ניקוזים – ומחייב בדיקה רחבה ומקצועית.
+      ישנם הבדלים רבים בין בדק בית בבית פרטי לבין בדירה – החל מטיפול בגגות ועד מערכות ניקוז מורכבות יותר.
+    </p>
+    <a href="article8.html" class="read-link">›› קרא עוד</a>
+  </article>
 
     <article class="article-box">
       <h3 class="article-title">מהו בדק בית?</h3>
@@ -532,25 +410,25 @@ body.menu-open {
     </article>
   </div>
 
-  <div class="pagination">
-    <a href="index.html">« חזרה לעמוד הבית</a>
-  
-  </div>
-    <footer>
-    <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
-    <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
-  </footer>
+</div>
 
-  <script>
-    // סקריפט למעבר תפריט המבורגר במובייל
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
+<div class="pagination">
+  <a href="index.html">« חזרה לעמוד הבית</a>
+</div>
 
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  </script>
-  
+<footer>
+  <p><strong>כל הזכויות שמורות © תכלת-הנדסה</strong></p>
+  <p><strong>tkhelet.engineering@gmail.com | 050-844-8818</strong></p>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
 
