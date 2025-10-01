@@ -431,6 +431,7 @@ li {
   }
 
   /* סתרנו את תפריט הניווט כברירת מחדל */
+  /* סתרנו את תפריט הניווט כברירת מחדל */
   .תפריט-ניווט {
     display: none;
     flex-direction: column;
@@ -507,6 +508,32 @@ li {
     display: flex;          /* מופיע רק כשמחלקים active */
   }
 }
+
+/* תפריט מובייל */
+@media (max-width: 768px) {
+  .תפריט-ניווט {
+    display: none;
+    flex-direction: column;
+    position: fixed;        /* או absolute */
+    top: 70px;              /* מתחת לסרגל */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;           /* נמוך יותר מהסרגל וההמבורגר */
+  }
+
+  .תפריט-ניווט.active {
+    display: flex;
+  }
+
+  .המבורגר {
+    position: relative;
+    z-index: 1000;          /* נשאר מעל התפריט */
+  }
+}
+
 
 
   </style>
@@ -650,4 +677,5 @@ li {
   </script>
 </body>
 </html>
+
 
