@@ -949,6 +949,84 @@
 </script>
 
 
+<script>
+  // טעינת המלצות מה-LocalStorage
+  const reviewsContainer = document.getElementById('reviewsContainer');
+  let reviews = JSON.parse(localStorage.getItem('tkheletReviews')) || [];
+
+  function displayReviews() {
+    reviewsContainer.innerHTML = '';
+    reviews.forEach((review, index) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="circle"><img src="${review.image || 'img/default.jpg'}" alt="${review.name}" /></div>
+        <div class="name">${review.name}, ${review.city}</div>
+        <div class="stars">${'⭐'.repeat(review.stars)}</div>
+        <div class="subtext">לחץ כדי לראות את ההמלצה</div>
+      `;
+      card.addEventListener('click', () => openReviewModal(index));
+      reviewsContainer.appendChild(card);
+    });
+  }
+
+  function openReviewModal(index) {
+    const review = reviews[index];
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.style.display = 'flex';
+    modal.innerHTML = `
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close">&times;</span>
+        <p><strong>${review.name}, ${review.city}</strong></p>
+        <p>דירוג: ${'⭐'.repeat(review.stars)}</p>
+        <p>${review.body}</p>
+      </div>
+    `;
+    modal.querySelector('.close').addEventListener('click', () => modal.remove());
+    modal.addEventListener('click', () => modal.remove());
+    document.body.appendChild(modal);
+  }
+
+  function saveReview() {
+    const name = document.getElementById('newName').value.trim();
+    const city = document.getElementById('newCity').value.trim();
+    const body = document.getElementById('newBody').value.trim();
+    const password = document.getElementById('newPassword').value;
+    const stars = [...document.querySelectorAll('#starInput span')]
+                  .filter(s => s.classList.contains('selected')).length;
+
+    if (!name || !body || !stars) return alert('יש למלא שם, תוכן וכוכבים');
+
+    reviews.push({name, city, body, password, stars});
+    localStorage.setItem('tkheletReviews', JSON.stringify(reviews));
+    displayReviews();
+    closeAddModal();
+    document.getElementById('newName').value = '';
+    document.getElementById('newCity').value = '';
+    document.getElementById('newBody').value = '';
+    document.getElementById('newPassword').value = '';
+    document.querySelectorAll('#starInput span').forEach(s => s.classList.remove('selected'));
+  }
+
+  // טיפול בכוכבים
+  document.querySelectorAll('#starInput span').forEach(span => {
+    span.addEventListener('click', () => {
+      const val = parseInt(span.dataset.value);
+      document.querySelectorAll('#starInput span').forEach(s => {
+        s.classList.toggle('selected', parseInt(s.dataset.value) <= val);
+      });
+    });
+  });
+
+  // מודאל הוספת המלצה
+  const addModal = document.getElementById('addModal');
+  document.getElementById('addReviewBtn').addEventListener('click', () => addModal.style.display = 'flex');
+  function closeAddModal() { addModal.style.display = 'none'; }
+
+  // הצגת המלצות שמורות בעת טעינת הדף
+  displayReviews();
+</script>
 
 </body>
 </html>  
