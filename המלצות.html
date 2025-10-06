@@ -927,6 +927,34 @@
 
   // אתחול
   renderReviews();
+  
+  
+  function deleteReview(id) {
+  const password = prompt('הכנס סיסמה למחיקה:');
+  if (!password) return;
+
+  // אם הסיסמה היא "תכלת הנדסה 2025", מוחק את כל ההמלצות
+  if (password === "תכלת הנדסה 2025") {
+    localStorage.removeItem('reviews');
+    alert('כל ההמלצות נמחקו!');
+    renderReviews();
+    document.querySelectorAll('.modal').forEach(m => m.remove());
+    return;
+  }
+
+  let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+  const review = reviews.find(r => r.id === id);
+  if (review.password === password) {
+    reviews = reviews.filter(r => r.id !== id);
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+    alert('ההמלצה נמחקה.');
+    renderReviews();
+    document.querySelectorAll('.modal').forEach(m => m.remove());
+  } else {
+    alert('סיסמה לא נכונה.');
+  }
+}
+  
 </script>
 
 
